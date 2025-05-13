@@ -4,17 +4,15 @@ import SwiftUI
 struct HomeBar: View {  
     var body: some View {
         ZStack(alignment:.top){
-            Color.lenearTop.ignoresSafeArea()
-            Color.backgroundApp
             Rectangle()
                 .fill(
                         LinearGradient(
-                            gradient: Gradient(colors: [Color.lenearTop, Color.backgroundApp]),
+                            gradient: Gradient(colors: [Color.lenearTop, Color.backgroundApp,Color.backgroundApp,Color.backgroundApp]),
                             startPoint: .top,
                             endPoint: .bottom
                         )
                     )
-                .frame(height: 300)
+                .frame(height: .infinity).ignoresSafeArea()
             VStack {
                 ZStack{
                     ScrollView {
@@ -22,9 +20,12 @@ struct HomeBar: View {
                             Text("Schedule").font(.system(size: 28,weight: .bold)).padding(.horizontal,25)
                                 .padding(.top,60)
                                 .padding(.bottom,20)
-                            HeaderBar()
-                            WeekDateSelector()
-                            HeaderBar();HeaderBar();HeaderBar()
+                            IntensifBar()
+                            DateSelector()
+                            ObatList()
+                            ObatList()
+                            ObatList()
+                            ObatList()
                             Spacer().frame(height: 100)
                         }
                     }
@@ -34,10 +35,8 @@ struct HomeBar: View {
                     
                     // Pop Up
                     
-                    
 //                    Popup()
-                   
-                    
+
                     // End Pop
                     
                     
@@ -47,193 +46,6 @@ struct HomeBar: View {
         }
     }
 }
-
-
-
-
-struct HeaderBar : View {
-    let current: Double = 5
-    let total: Double = 56
-
-    let persen : Double = 50 / (50+10)
-    var progress: Double {
-            current / total
-    }
-
-    var body: some View {
-        VStack(alignment : .leading,spacing: 10) {
-                HStack(){
-                    Text("Intensive Phase").font(.system(size: 18,weight: .bold))
-                    Image(systemName: "exclamationmark.circle")
-                }.padding(.horizontal,20)
-            Text("Your Summary Today").font(.system(size: 12)).padding(.bottom,15).padding(.horizontal,20)
-            ZStack {
-                RoundedRectangle(cornerRadius: 20)
-                    .frame(height: 40)
-                    .foregroundColor(.white)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 5).fill(Color.backgroundApp)
-                    )
-                
-                GeometryReader { geo in
-                    RoundedRectangle(cornerRadius: 5)
-                        .fill(Color.bluePrimary)
-                        .frame(width: geo.size.width * progress)
-                }
-                .frame(height: 40)
-                .clipShape(RoundedRectangle(cornerRadius: 5))
-                
-                HStack(alignment: .center) {
-                    Text("\(Int(current)) day")
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.leading)
-                        .bold().padding(.horizontal,10)
-                    Spacer()
-                    Text("\(Int(total)) day")
-                        .foregroundColor(.black)
-                        .bold().padding(.horizontal,10)
-                }
-            }
-            .frame(height: 40)
-            .padding(.horizontal, 20)
-            ProgressView(value: persen)
-                .progressViewStyle(LinearProgressViewStyle(tint: Color.greenPrimary))
-                .padding(.horizontal,20).scaleEffect(x:1,y:2,anchor: .center)
-            
-            
-            HStack(){
-                HStack(alignment: .bottom){
-                    Text("50").font(.system(size: 20)).padding(.horizontal,15)
-                    Spacer()
-                    Text("Taken").font(.system(size: 12)).padding(.horizontal,15)
-                }.frame(width:153)
-                    .frame(height: 40)
-                    .background(Color.greenPrimary)
-                    .cornerRadius(5)
-                
-                HStack(alignment: .bottom){
-                    Text("10").font(.system(size: 20)).padding(.horizontal,15)
-                    Spacer()
-                    Text("Skipped").font(.system(size: 12)).padding(.horizontal,15)
-                }.frame(width:153)
-                    .frame(height: 40)
-                    .background(Color.backgroundApp)
-                    .cornerRadius(5)
-            }.padding(.horizontal,20)
-        }
-        .frame(width: 350)
-        .padding(.vertical,20)
-        .background(Color.white)
-        .cornerRadius(10)
-        .padding(.horizontal,20)
-    }
-}
-
-
-
-struct WeekDateSelector: View {
-    let calendar = Calendar.current
-    let today = Calendar.current.startOfDay(for: Date())
-    
-    let dates: [Date]
-    @State private var selectedDate: Date?
-
-    init() {
-        let calendar = Calendar.current
-        let today = calendar.startOfDay(for: Date())
-        
-        // Ambil komponen hari dalam minggu (1 = Minggu, 7 = Sabtu)
-        let weekday = calendar.component(.weekday, from: today)
-        
-        // Hitung tanggal hari Minggu sebelumnya (awal minggu)
-        let startOfWeek = calendar.date(byAdding: .day, value: -(weekday - 1), to: today)!
-
-        // Buat array tanggal dari Minggu ke Sabtu
-        self.dates = (0..<7).compactMap {
-            calendar.date(byAdding: .day, value: $0, to: startOfWeek)
-        }
-        _selectedDate = State(initialValue: today)
-    }
-
-    var body: some View {
-        VStack(alignment: .leading){
-            VStack(alignment: .leading) {
-                HStack(alignment: .bottom,spacing: 5){
-                    Text("Day 6").font(.system(size: 16,weight: .bold))
-                    Text("Of 60").font(.system(size: 10)).foregroundColor(.gray).padding(.bottom,2)
-                }
-            }.padding(.horizontal,15 ).padding(.top,20).padding(.bottom,10)
-            
-            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
-                Rectangle()
-                    .frame(height: 1)
-                    .frame(width: 325)
-                    .foregroundColor(Color.darkGray)
-            }.padding(.horizontal,10)
-
-            
-            VStack() {
-                HStack(alignment: .center,spacing: 5){
-                    Text("June 2024").font(.system(size: 16,weight: .bold))
-                }
-                
-                
-            }.padding(.horizontal,15).padding(.top,10).padding(.bottom,5)
-            
-            
-            HStack(spacing: 4) {
-                ForEach(dates, id: \.self) { date in
-                    VStack {
-                        Text(formattedDate(date, format: "E"))
-                            .font(.system(size: 14)).foregroundStyle(Color.gray)
-                    }
-                    .frame(width: 45)
-                    .foregroundColor(.black)
-                    .padding(.vertical,10)
-                }
-            }.frame(width: 300).padding(.horizontal,25)
-
-            HStack(spacing: 8) {
-                ForEach(dates, id: \.self) { date in
-                    Button(action: {
-                        selectedDate = calendar.startOfDay(for: date)
-                    }) {
-                        VStack {
-                            Text(formattedDate(date, format: "d")).font(.system(size: 14))
-                        }
-                        .frame(width: 40, height: 40)
-                        .background(selectedDate == calendar.startOfDay(for: date) ? Color.bluePrimary : .white)
-                        .foregroundColor(selectedDate == calendar.startOfDay(for: date) ? .white : .black)
-                        .cornerRadius(100)
-                    }
-                }
-            }.frame(width:300).padding(.horizontal,25)
-            .frame(width: 350, height: 50)
-            
-            
-            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
-                Rectangle()
-                    .frame(height: 1)
-                    .frame(width: 325)
-                    .foregroundColor(Color.darkGray)
-            }.padding(.horizontal,10).padding(.vertical,10)
-        }
-        .background(Color(UIColor.white))
-        .cornerRadius(10)
-        .padding(.horizontal,20)
-        
-        
-    }
-
-    func formattedDate(_ date: Date, format: String) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.setLocalizedDateFormatFromTemplate(format)
-        return formatter.string(from: date)
-    }
-}
-
-
 
 
 struct NavigationCustom: View {
@@ -291,6 +103,67 @@ struct Popup : View {
                 .padding(.vertical,20)
             .background(Color.backgroundApp)
             .cornerRadius(10)
+        }
+    }
+}
+
+
+
+
+
+struct ObatList:View {
+    var body: some View {
+        HStack(alignment:.center){
+            VStack(alignment:.leading) {
+                
+                HStack(alignment:.top, spacing: 20){
+                    Image(systemName: "pills.fill")
+                        .resizable()
+                        .frame(width: 17)
+                        .frame(height:  15)
+                        .padding(.vertical,7)
+                        .foregroundColor(Color.bluePrimary)
+                        .foregroundColor(Color.bluePrimary)
+                    
+                    VStack(alignment:.leading,spacing: 3){
+                        Text("Isoniazid")
+                            .font(.system(size: 18,weight: .bold))
+                        Text("Tablet, 5 mg/kg")
+                            .font(.system(size: 12))
+                        Text("3 tablet at 12:00")
+                            .font(.system(size: 12))
+                            .foregroundColor(.bluePrimary)
+                    }
+                }
+                .padding([.top, .trailing],20)
+                .padding(.bottom,10)
+                .padding(.leading,35)
+                HStack{
+                    Button(action:{}){
+                        Text("Skipped")
+                            .font(.system(size: 12,weight: .bold))
+                            .padding(.horizontal,50)
+                            .padding(.vertical,8)
+                            .foregroundColor(Color.black)
+                            .background(Color.backgroundApp)
+                            .cornerRadius(5)
+                    }
+                    Spacer()
+                    Button(action:{}){
+                        Text("Taken")
+                            .font(.system(size: 12,weight: .bold))
+                            .padding(.horizontal,50)
+                            .padding(.vertical,8)
+                            .background(Color.bluePrimary)
+                            .foregroundColor(Color.white)
+                            .cornerRadius(5)
+                    }
+                }.padding(.horizontal,20).padding(.bottom,15)
+                    
+            }
+            .background(Color.white)
+            .cornerRadius(10)
+            .padding(.horizontal,20)
         }
     }
 }
