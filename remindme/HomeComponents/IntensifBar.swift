@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct IntensifBar : View {
+    @State private var info:Bool = false
+    
     let current: Double = 10
     let total: Double = 56
 
@@ -13,7 +15,95 @@ struct IntensifBar : View {
         VStack(alignment : .leading,spacing: 10) {
                 HStack(){
                     Text("Intensive Phase").font(.system(size: 18,weight: .bold))
-                    Image(systemName: "exclamationmark.circle")
+                    Button(action : {
+                        info = true
+                    }){
+                        Image(systemName: "exclamationmark.circle")
+                            .sheet(isPresented: $info) {
+                                VStack(alignment:.leading){
+                                    HStack{
+                                        Spacer()
+                                        Button("Done",action: {
+                                            info = false
+                                        }).padding(.all,20)
+                                    }
+                                    VStack(alignment:.center){
+                                        Text("Intensive Phase")
+                                            .font(.system(size: 18,weight: .bold))
+                                        Text("Treatment for tuberculosis (TB) consists of the Intensive Phase and the Continuation Phase. The Intensive Phase is the initial 2-month stage. Its purpose is to reduce the number of active bacteria in the body.")
+                                            .font(.system(size: 12))
+                                            .padding(.horizontal,30)
+                                            .padding(.vertical,5)
+            
+                                        VStack{
+                                            HStack{
+                                                Image(systemName: "sun.min.fill")
+                                                    .foregroundColor(.blue)
+                                                Text("TB Treatment Timeline")
+                                                    .font(.headline)
+                                            }
+// Start
+                                            VStack{
+                                                HStack{
+                                                    Image(systemName: "circle.fill")
+                                                        .resizable()
+                                                        .frame(width: 10)
+                                                        .frame(height: 10)
+                                                        .foregroundColor(Color.yellow)
+                                                    Text("Intensive Phase")
+                                                    
+                                                }
+                                                VStack(alignment: .leading){
+                                                    Text("2 mounth")
+                                                        .font(.system(size: 12))
+                                                    HStack{
+                                                        Text("Drugs :")
+                                                            .font(.system(size: 12))
+                                                        Text("RHZE")
+                                                            .font(.system(size: 12))
+                                                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                                                    }
+                                                }.padding(.trailing,10)
+                                                
+                                            }
+                                            VStack{
+                                                HStack{
+                                                    Image(systemName: "circle.fill")
+                                                        .resizable()
+                                                        .frame(width: 10)
+                                                        .frame(height: 10)
+                                                        .foregroundColor(Color.yellow)
+                                                    Text("Intensive Phase")
+                                                    
+                                                }
+                                                VStack(alignment: .leading){
+                                                    Text("2 mounth")
+                                                        .font(.system(size: 12))
+                                                    HStack{
+                                                        Text("Drugs :")
+                                                            .font(.system(size: 12))
+                                                        Text("RHZE")
+                                                            .font(.system(size: 12))
+                                                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                                                    }
+                                                }.padding(.trailing,10)
+                                                   
+                                                
+                                            }
+                                            .padding(.top,10)
+// End
+                                        }.padding(.horizontal,60)
+                                            .padding(.vertical,20)
+                                            .background(.white)
+                                            .cornerRadius(6)
+                                    }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                                     .foregroundColor(.black)
+                                    Spacer()
+                                }.presentationDetents([.medium])
+                                    .background(Color.backgroundApp)
+                            }
+                    }
+                    
                 }.padding(.horizontal,20)
             Text("Your Summary Today").font(.system(size: 12)).padding(.bottom,15).padding(.horizontal,20)
             ZStack {

@@ -16,6 +16,7 @@ struct HomeBar: View {
             VStack {
                 ZStack{
                     ScrollView {
+                        
                         VStack(alignment:.leading) {
                             Text("Schedule").font(.system(size: 28,weight: .bold)).padding(.horizontal,25)
                                 .padding(.top,60)
@@ -23,22 +24,12 @@ struct HomeBar: View {
                             IntensifBar()
                             DateSelector()
                             ObatList()
-                            ObatList()
-                            ObatList()
-                            ObatList()
+                           
                             Spacer().frame(height: 100)
                         }
                     }
-                    
-                    NavigationCustom()
-                    
-                    
-                    // Pop Up
-                    
-//                    Popup()
 
-                    // End Pop
-                    
+                    NavigationCustom()
                     
                 }
               
@@ -81,37 +72,13 @@ struct NavigationCustom: View {
 
 
 
-struct Popup : View {
-    @State private var showPrompt = false
-    @State private var inputText = ""
-    var body: some View {
-        ZStack{
-            Rectangle()
-                .fill(Color.gray)
-                .opacity(0.8)
-                .ignoresSafeArea()
-            VStack(spacing:10){
-                Text("Skipped Notes").font(.system(size: 18,weight: .bold))
-                Text("please write a note why this skipped")
-                    .font(.system(size: 12))
-                TextEditor(text: $inputText)
-                    .frame(height: 60)
-                    .frame(width:310)
-                    .padding(.horizontal,10)
-                    .cornerRadius(10)
-            }.padding(.horizontal,10)
-                .padding(.vertical,20)
-            .background(Color.backgroundApp)
-            .cornerRadius(10)
-        }
-    }
-}
-
-
-
 
 
 struct ObatList:View {
+    
+    @State private var alertShow: Bool = false
+    @State private var textField: String = ""
+    
     var body: some View {
         HStack(alignment:.center){
             VStack(alignment:.leading) {
@@ -139,7 +106,8 @@ struct ObatList:View {
                 .padding(.bottom,10)
                 .padding(.leading,35)
                 HStack{
-                    Button(action:{}){
+                    Button(action:{alertShow = true}){
+                        
                         Text("Skipped")
                             .font(.system(size: 12,weight: .bold))
                             .padding(.horizontal,50)
@@ -147,7 +115,15 @@ struct ObatList:View {
                             .foregroundColor(Color.black)
                             .background(Color.backgroundApp)
                             .cornerRadius(5)
-                    }
+                    }.alert("Skipped Notes", isPresented: $alertShow, actions: {
+                        TextField("Note", text: $textField)
+
+                        
+                        Button("OK", action: {})
+                        Button("Cancel", role: .cancel, action: {})
+                    }, message: {
+                        Text("please write a note why this skipped")
+                    })
                     Spacer()
                     Button(action:{}){
                         Text("Taken")
