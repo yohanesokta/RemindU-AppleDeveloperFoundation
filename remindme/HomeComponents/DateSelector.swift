@@ -17,7 +17,7 @@ struct DateSelector: View {
     init() {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
-        
+
         // Ambil komponen hari dalam minggu (1 = Minggu, 7 = Sabtu)
         let weekday = calendar.component(.weekday, from: today)
         
@@ -103,5 +103,9 @@ struct DateSelector: View {
 }
 
 #Preview {
-    DateSelector()
+    ZStack{
+        Color.backgroundApp.ignoresSafeArea()
+        DateSelector()
+    }
+    
 }

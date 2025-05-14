@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0421490C2DD43FEC004F2B12 /* ObatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421490B2DD43FEC004F2B12 /* ObatCard.swift */; };
+		042149112DD44488004F2B12 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042149102DD44488004F2B12 /* Models.swift */; };
+		042149132DD4478B004F2B12 /* ConstantData.json in Resources */ = {isa = PBXBuildFile; fileRef = 042149122DD4478B004F2B12 /* ConstantData.json */; };
 		042D517E2DD2E12300215B71 /* IntensifBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D517D2DD2E12300215B71 /* IntensifBar.swift */; };
 		042D51802DD2E17F00215B71 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D517F2DD2E17F00215B71 /* DateSelector.swift */; };
 		0448DF7C2DC99B4F005EB1AA /* remindmeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448DF7B2DC99B4F005EB1AA /* remindmeApp.swift */; };
@@ -15,11 +18,12 @@
 		0448DF832DC99B50005EB1AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0448DF822DC99B50005EB1AA /* Preview Assets.xcassets */; };
 		047895BE2DD0CE7D00113504 /* HomeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047895BD2DD0CE7D00113504 /* HomeBar.swift */; };
 		047895C02DD29EAA00113504 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047895BF2DD29EAA00113504 /* Launch Screen.storyboard */; };
-		047895C42DD2A46B00113504 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047895C32DD2A46B00113504 /* User.swift */; };
-		047895C92DD2A56700113504 /* RegimentObat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047895C82DD2A56700113504 /* RegimentObat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0421490B2DD43FEC004F2B12 /* ObatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatCard.swift; sourceTree = "<group>"; };
+		042149102DD44488004F2B12 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		042149122DD4478B004F2B12 /* ConstantData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ConstantData.json; sourceTree = "<group>"; };
 		042D517D2DD2E12300215B71 /* IntensifBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensifBar.swift; sourceTree = "<group>"; };
 		042D517F2DD2E17F00215B71 /* DateSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
 		0448DF782DC99B4F005EB1AA /* remindme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = remindme.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,8 +34,6 @@
 		047895BD2DD0CE7D00113504 /* HomeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBar.swift; sourceTree = "<group>"; };
 		047895BF2DD29EAA00113504 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		047895C12DD2A31100113504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		047895C32DD2A46B00113504 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		047895C82DD2A56700113504 /* RegimentObat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegimentObat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			children = (
 				042D517D2DD2E12300215B71 /* IntensifBar.swift */,
 				042D517F2DD2E17F00215B71 /* DateSelector.swift */,
+				0421490B2DD43FEC004F2B12 /* ObatCard.swift */,
 			);
 			path = HomeComponents;
 			sourceTree = "<group>";
@@ -97,8 +100,8 @@
 		047895C72DD2A4A200113504 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				047895C32DD2A46B00113504 /* User.swift */,
-				047895C82DD2A56700113504 /* RegimentObat.swift */,
+				042149102DD44488004F2B12 /* Models.swift */,
+				042149122DD4478B004F2B12 /* ConstantData.json */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				047895C02DD29EAA00113504 /* Launch Screen.storyboard in Resources */,
+				042149132DD4478B004F2B12 /* ConstantData.json in Resources */,
 				0448DF832DC99B50005EB1AA /* Preview Assets.xcassets in Resources */,
 				0448DF802DC99B50005EB1AA /* Assets.xcassets in Resources */,
 			);
@@ -174,11 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				047895C92DD2A56700113504 /* RegimentObat.swift in Sources */,
-				047895C42DD2A46B00113504 /* User.swift in Sources */,
+				0421490C2DD43FEC004F2B12 /* ObatCard.swift in Sources */,
 				0448DF7E2DC99B4F005EB1AA /* WeightSelected.swift in Sources */,
 				0448DF7C2DC99B4F005EB1AA /* remindmeApp.swift in Sources */,
 				047895BE2DD0CE7D00113504 /* HomeBar.swift in Sources */,
+				042149112DD44488004F2B12 /* Models.swift in Sources */,
 				042D51802DD2E17F00215B71 /* DateSelector.swift in Sources */,
 				042D517E2DD2E12300215B71 /* IntensifBar.swift in Sources */,
 			);

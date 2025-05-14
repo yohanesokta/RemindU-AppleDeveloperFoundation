@@ -30,6 +30,7 @@ struct IntensifBar : View {
                                     VStack(alignment:.center){
                                         Text("Intensive Phase")
                                             .font(.system(size: 18,weight: .bold))
+                                        
                                         Text("Treatment for tuberculosis (TB) consists of the Intensive Phase and the Continuation Phase. The Intensive Phase is the initial 2-month stage. Its purpose is to reduce the number of active bacteria in the body.")
                                             .font(.system(size: 12))
                                             .padding(.horizontal,30)
@@ -54,7 +55,7 @@ struct IntensifBar : View {
                                                     
                                                 }
                                                 VStack(alignment: .leading){
-                                                    Text("2 mounth")
+                                                    Text("2 months")
                                                         .font(.system(size: 12))
                                                     HStack{
                                                         Text("Drugs :")
@@ -73,16 +74,16 @@ struct IntensifBar : View {
                                                         .frame(width: 10)
                                                         .frame(height: 10)
                                                         .foregroundColor(Color.yellow)
-                                                    Text("Intensive Phase")
+                                                    Text("Continuation Phase")
                                                     
                                                 }
                                                 VStack(alignment: .leading){
-                                                    Text("2 mounth")
+                                                    Text("4 months")
                                                         .font(.system(size: 12))
                                                     HStack{
                                                         Text("Drugs :")
                                                             .font(.system(size: 12))
-                                                        Text("RHZE")
+                                                        Text("RH")
                                                             .font(.system(size: 12))
                                                             .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                                                     }
@@ -165,6 +166,33 @@ struct IntensifBar : View {
     }
 }
 
+
+
+struct JustifiedText: UIViewRepresentable {
+    let text: String
+    let fontSize: CGFloat
+
+    func makeUIView(context: Context) -> UITextView {
+        let textView = UITextView()
+        textView.text = text
+        textView.font = UIFont.systemFont(ofSize: fontSize)
+        textView.textAlignment = .justified
+        textView.isEditable = false
+        textView.isScrollEnabled = false
+        textView.backgroundColor = .clear
+        return textView
+    }
+
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.text = text
+    }
+}
+
+
 #Preview {
-    IntensifBar()
+    ZStack{
+        Color.backgroundApp.ignoresSafeArea()
+        IntensifBar()
+    }
+    
 }
