@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SQLite3
 
 class AppState:ObservableObject {
     @Published var isWeight: Bool = false
