@@ -18,6 +18,8 @@
 		0448DF832DC99B50005EB1AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0448DF822DC99B50005EB1AA /* Preview Assets.xcassets */; };
 		047895BE2DD0CE7D00113504 /* HomeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047895BD2DD0CE7D00113504 /* HomeBar.swift */; };
 		047895C02DD29EAA00113504 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047895BF2DD29EAA00113504 /* Launch Screen.storyboard */; };
+		04CEE4A02DD4F09E0074EE76 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEE49F2DD4F09E0074EE76 /* Journey.swift */; };
+		04CEE4A22DD4F1020074EE76 /* CardJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEE4A12DD4F1020074EE76 /* CardJourney.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		047895BD2DD0CE7D00113504 /* HomeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBar.swift; sourceTree = "<group>"; };
 		047895BF2DD29EAA00113504 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		047895C12DD2A31100113504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		04CEE49F2DD4F09E0074EE76 /* Journey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
+		04CEE4A12DD4F1020074EE76 /* CardJourney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardJourney.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 		042D517C2DD2E0EC00215B71 /* HomeComponents */ = {
 			isa = PBXGroup;
 			children = (
+				04CEE4A12DD4F1020074EE76 /* CardJourney.swift */,
 				042D517D2DD2E12300215B71 /* IntensifBar.swift */,
 				042D517F2DD2E17F00215B71 /* DateSelector.swift */,
 				0421490B2DD43FEC004F2B12 /* ObatCard.swift */,
@@ -83,7 +88,7 @@
 				0448DF7B2DC99B4F005EB1AA /* remindmeApp.swift */,
 				0448DF7D2DC99B4F005EB1AA /* WeightSelected.swift */,
 				047895BD2DD0CE7D00113504 /* HomeBar.swift */,
-				04A113382DD44818005091E3 /* Journey.swift */,
+				04CEE49F2DD4F09E0074EE76 /* Journey.swift */,
 				042D517C2DD2E0EC00215B71 /* HomeComponents */,
 				0448DF7F2DC99B50005EB1AA /* Assets.xcassets */,
 			);
@@ -182,12 +187,12 @@
 				0421490C2DD43FEC004F2B12 /* ObatCard.swift in Sources */,
 				0448DF7E2DC99B4F005EB1AA /* WeightSelected.swift in Sources */,
 				0448DF7C2DC99B4F005EB1AA /* remindmeApp.swift in Sources */,
-				04A113392DD44818005091E3 /* Journey.swift in Sources */,
 				047895BE2DD0CE7D00113504 /* HomeBar.swift in Sources */,
+				04CEE4A02DD4F09E0074EE76 /* Journey.swift in Sources */,
 				042149112DD44488004F2B12 /* Models.swift in Sources */,
 				042D51802DD2E17F00215B71 /* DateSelector.swift in Sources */,
 				042D517E2DD2E12300215B71 /* IntensifBar.swift in Sources */,
-				04A1133B2DD44AD5005091E3 /* CardJourney.swift in Sources */,
+				04CEE4A22DD4F1020074EE76 /* CardJourney.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
