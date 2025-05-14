@@ -60,6 +60,13 @@ struct SegmenView: View {
 
             // Konten yang berubah tergantung pilihan
             if selectedSegment == 0 {
+                HStack{
+                    Text("May 14")
+                        .font(.system(size: 14, weight: .bold)).padding(.horizontal,25)
+                    Spacer()
+                }
+                
+                
                 CardJourney()
             } else {
                 Text("No Data")
