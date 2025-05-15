@@ -26,7 +26,7 @@ struct CardJourney: View {
                             .font(.system(size: 18,weight: .bold))
                         Text("Tablet, 5 mg/kg")
                             .font(.system(size: 12))
-                        Text("Everyday")
+                        Text("Everyday, After Meals")
                             .font(.system(size: 12))
                         Text("3 tablet at 12:00")
                             .font(.system(size: 12))
