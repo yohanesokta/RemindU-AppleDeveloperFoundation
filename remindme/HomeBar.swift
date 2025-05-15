@@ -11,8 +11,7 @@ struct HomeBar: View {
                             startPoint: .top,
                             endPoint: .bottom
                         )
-                    )
-                .frame(height: .infinity).ignoresSafeArea()
+                    ).ignoresSafeArea()
             VStack {
                 ZStack{
                     ScrollView {
@@ -63,8 +62,6 @@ struct NavigationCustom: View {
                 .padding(.top,15)
                 .frame(maxWidth: .infinity)
                 .background(.ultraThinMaterial)
-                
-            
         }
     }
 }
