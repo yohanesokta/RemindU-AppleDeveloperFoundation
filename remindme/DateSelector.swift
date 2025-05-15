@@ -18,13 +18,9 @@ struct DateSelector: View {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
 
-        // Ambil komponen hari dalam minggu (1 = Minggu, 7 = Sabtu)
         let weekday = calendar.component(.weekday, from: today)
-        
-        // Hitung tanggal hari Minggu sebelumnya (awal minggu)
-        let startOfWeek = calendar.date(byAdding: .day, value: -(weekday - 1), to: today)!
 
-        // Buat array tanggal dari Minggu ke Sabtu
+        let startOfWeek = calendar.date(byAdding: .day, value: -(weekday - 1), to: today)!
         self.dates = (0..<7).compactMap {
             calendar.date(byAdding: .day, value: $0, to: startOfWeek)
         }

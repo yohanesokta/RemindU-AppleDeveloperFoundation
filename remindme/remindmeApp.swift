@@ -9,7 +9,7 @@ import SwiftUI
 
 class AppState:ObservableObject {
     @Published var isWeight: Bool = false
-    @Published var StartedDay: Int32 = 0
+    @Published var ageGroub: String = "children"
 }
 
 @main
