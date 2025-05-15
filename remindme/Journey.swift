@@ -63,10 +63,9 @@ struct SegmenView: View {
                     Spacer()
                 }
                 
-                
                 CardJourney()
             } else {
-                Text("No Data")
+                EmptyJourney()
             }
         }
     }
