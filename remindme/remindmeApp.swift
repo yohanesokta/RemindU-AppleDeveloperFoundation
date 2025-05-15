@@ -18,7 +18,7 @@ struct remindmeApp: App {
     var body: some Scene {
         WindowGroup {
             if (appState.isWeight) {
-                HomeBar()
+                MainView()
                 
             } else {
                 WeightSelected()
