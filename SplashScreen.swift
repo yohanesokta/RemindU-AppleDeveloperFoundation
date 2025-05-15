@@ -2,7 +2,7 @@
 //  SplashScreen.swift
 //  remindme
 //
-//  Created by MacBook on 14/05/25.
+//  Created by MacBook on 15/05/25.
 //
 
 import SwiftUI
