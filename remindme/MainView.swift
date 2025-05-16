@@ -64,7 +64,7 @@ struct NavigationCustom: View {
                     }
                 }
             }
-            .padding(.vertical, 10)
+            .padding(.vertical, 20)
             .frame(maxWidth: .infinity)
             .background(.ultraThinMaterial)
         }
