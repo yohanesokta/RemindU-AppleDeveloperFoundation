@@ -27,7 +27,6 @@ struct HomeBar: View {
                         }
                     }
 
-                    NavigationCustom()
                     
                 }
               
@@ -37,34 +36,7 @@ struct HomeBar: View {
 }
 
 
-struct NavigationCustom: View {
-    var body: some View {
-        VStack{
-            Spacer()
-            HStack(alignment:.center,spacing:100){
-                VStack{
-                    Image(systemName: "calendar")
-                        .resizable()
-                        .frame(width: 25,height: 25)
-                        .foregroundColor(.blue)
-                    Text("Schedule").font(.system(size: 12))
-                        .foregroundColor(.blue)
-                }
-                VStack{
-                    Image(systemName: "books.vertical.fill")
-                        .resizable()
-                        .frame(width: 25,height: 25)
-                        .foregroundColor(.gray)
-                    Text("Jurney").font(.system(size: 12))
-                        .foregroundColor(.gray)
-                }
-            }.frame(height: 50)
-                .padding(.top,15)
-                .frame(maxWidth: .infinity)
-                .background(.ultraThinMaterial)
-        }
-    }
-}
+
 
 #Preview {
     HomeBar()

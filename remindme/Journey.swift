@@ -33,8 +33,6 @@ struct Journey: View {
                             Spacer().frame(height: 100)
                         }
                     }
-
-                    NavigationCustom()
                     
                 }
               
@@ -58,7 +56,6 @@ struct SegmenView: View {
             .pickerStyle(.segmented)
             .padding()
 
-            // Konten yang berubah tergantung pilihan
             if selectedSegment == 0 {
                 HStack{
                     Text("May 14")
@@ -66,10 +63,9 @@ struct SegmenView: View {
                     Spacer()
                 }
                 
-                
                 CardJourney()
             } else {
-                Text("No Data")
+                EmptyJourney()
             }
         }
     }
