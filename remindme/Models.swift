@@ -15,7 +15,6 @@ extension Tahapan {
     ]
 }
 
-
 func obatRegimen(umur: Int) -> String {
     switch umur {
     case 30...37:
