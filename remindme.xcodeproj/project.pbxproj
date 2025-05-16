@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0410C6882DD5EBBE0091BEBB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0410C6872DD5EBBE0091BEBB /* SplashScreen.swift */; };
 		0448DF7C2DC99B4F005EB1AA /* remindmeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448DF7B2DC99B4F005EB1AA /* remindmeApp.swift */; };
 		0448DF7E2DC99B4F005EB1AA /* WeightSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448DF7D2DC99B4F005EB1AA /* WeightSelected.swift */; };
 		0448DF802DC99B50005EB1AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0448DF7F2DC99B50005EB1AA /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0410C6872DD5EBBE0091BEBB /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		0448DF782DC99B4F005EB1AA /* remindme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = remindme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0448DF7B2DC99B4F005EB1AA /* remindmeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remindmeApp.swift; sourceTree = "<group>"; };
 		0448DF7D2DC99B4F005EB1AA /* WeightSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightSelected.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				047895BF2DD29EAA00113504 /* Launch Screen.storyboard */,
+				0410C6872DD5EBBE0091BEBB /* SplashScreen.swift */,
 				0448DF7A2DC99B4F005EB1AA /* remindme */,
 				0448DF792DC99B4F005EB1AA /* Products */,
 			);
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0410C6882DD5EBBE0091BEBB /* SplashScreen.swift in Sources */,
 				047895C92DD2A56700113504 /* RegimentObat.swift in Sources */,
 				047895C42DD2A46B00113504 /* User.swift in Sources */,
 				0448DF7E2DC99B4F005EB1AA /* WeightSelected.swift in Sources */,
