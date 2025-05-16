@@ -20,28 +20,28 @@
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "6EFBFD58-1B5B-4989-A8A3-5E0510A06420 - ba41e0a793d3b2f3"
+                  uuid = "6EFBFD58-1B5B-4989-A8A3-5E0510A06420 - 6de9b26134e4eb8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in remindme.WeightSelected.body.getter : some"
                   moduleName = "remindme"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Documents/remindme/remindme/WeightSelected.swift"
+                  urlString = "file:///Users/mac/Documents/RemindU-AppleDeveloperFoundation/remindme/WeightSelected.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "9"
                   endingLineNumber = "9">
                </Location>
                <Location
-                  uuid = "6EFBFD58-1B5B-4989-A8A3-5E0510A06420 - 80522a6da2e9bda9"
+                  uuid = "6EFBFD58-1B5B-4989-A8A3-5E0510A06420 - 3ccd51ec227441ec"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in remindme.WeightSelected.body.getter : some"
                   moduleName = "remindme"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Documents/remindme/remindme/WeightSelected.swift"
+                  urlString = "file:///Users/mac/Documents/RemindU-AppleDeveloperFoundation/remindme/WeightSelected.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "10"

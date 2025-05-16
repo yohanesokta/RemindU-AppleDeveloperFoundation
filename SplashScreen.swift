@@ -30,15 +30,15 @@ struct SplashScreen: View {
         ZStack {
             LinearGradient(
                 gradient: Gradient(colors: [
-                    Color(hex: "#2BAAE1").opacity(0.9),
+                    Color(hex: "#8DC63F").opacity(0.9),
                     Color.white.opacity(0.9),
-                    Color(hex: "#8DC63F").opacity(0.9)
+                    Color(hex: "#2BAAE1").opacity(0.9)
                 ]),
                 startPoint: animateGradient ? .topLeading : .bottomTrailing,
                 endPoint: animateGradient ? .bottomTrailing : .topLeading
             )
             .ignoresSafeArea()
-            .animation(.easeInOut(duration: 6).repeatForever(autoreverses: true), value: animateGradient)
+            
 
             VStack {
                 Spacer(minLength: 60)
