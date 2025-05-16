@@ -4,19 +4,30 @@ import SwiftUI
 
 struct WeightSelected:View {
     @EnvironmentObject var appState:AppState
+    
+    @State private var selectedSegment = 0
+    let segments = ["Children", "Adults"]
+    
     var body: some View {
         NavigationStack{
             ZStack {
                 Color.backgroundApp.ignoresSafeArea()
                 VStack(alignment: .center) {
                     Text("What’s the patient’s age group?").font(.system(size: 18, weight: .bold))
-                    Text("The patient's age group helps determine the appropriate TB treatment program using FDC (Fixed-Dose Combination) medicine — either for children or adults.").font(.system(size: 12)).frame(width: 250).multilineTextAlignment(.center).foregroundColor(Color.black).padding(.top,1)
+                    Text("The patient's age group helps determine the appropriate TB treatment program using FDC (Fixed-Dose Combination) medicine — either for children or adults.")
+                        .font(.system(size: 12))
+                        .frame(width: 250)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color.black)
+                        .padding(.top,1)
+                        .padding(.bottom,100)
+                    
                     VStack(alignment:.leading,spacing: 10){
                         Text("Choose Age Group")
                             .font(.system(size: 14))
                         Rectangle()
                             .fill(Color.darkGray)
-                            .frame(width:200,height: 1)
+                            .frame(width:235,height: 1)
                         HStack(spacing:0){
                             Button(action:{
                                 appState.ageGroub = "children"
@@ -44,8 +55,6 @@ struct WeightSelected:View {
                             .background((appState.ageGroub == "adult") ? .blue : .backgroundApp)
                             .cornerRadius(7)
                         }
-                        .padding(.all,3)
-                        .background(.backgroundApp)
                         .cornerRadius(10)
                     }
                     .padding(.vertical,20)
@@ -61,7 +70,7 @@ struct WeightSelected:View {
                                 .background(.white)
                                 .cornerRadius(10)
                         }
-                    }.padding(.top,100)
+                    }.padding(.top,130)
                 }
             }
            
