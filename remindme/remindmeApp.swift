@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 class AppState:ObservableObject {
+    @Published var onSplashScreen = true
     @Published var isWeight: Bool = false
     @Published var ageGroub: String = "children"
 }
@@ -18,13 +19,18 @@ struct remindmeApp: App {
     @StateObject var appState = AppState()
     var body: some Scene {
         WindowGroup {
-            if (appState.isWeight) {
-                mainView()
-                    .modelContainer(for: LocalData.self)
-                
-            } else {
-                WeightSelected()
+            if (appState.onSplashScreen) {
+                ContentView()
                     .environmentObject(appState)
+            } else {
+                if (appState.isWeight) {
+                    mainView()
+                        .modelContainer(for: LocalData.self)
+                    
+                } else {
+                    WeightSelected()
+                        .environmentObject(appState)
+                }
             }
         }
     }

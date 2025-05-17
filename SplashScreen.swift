@@ -1,8 +1,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var appState:AppState
+    
     var body: some View {
-        RootView()
+        RootView().onAppear{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                appState.onSplashScreen = false
+            }
+        }
     }
 }
 

@@ -16,15 +16,14 @@ struct IntensifBar : View {
     
     @Query var localdata:[LocalData]
     func hitungTaken() {
+        taken = 0;skip = 0;
         for data in localdata {
-            print(data.taken)
             if (data.taken) {
                 taken += 1
             } else {
                 skip += 1
             }
         }
-        print(skip)
     }
     var body: some View {
         VStack(alignment : .leading,spacing: 10) {
@@ -179,6 +178,8 @@ struct IntensifBar : View {
         .cornerRadius(10)
         .padding(.horizontal,20)
         .onAppear{
+            hitungTaken()
+        }.onChange(of: localdata) {
             hitungTaken()
         }
     }

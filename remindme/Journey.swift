@@ -8,12 +8,9 @@
 import SwiftUI
 import SwiftData
 
-
 struct Journey: View {
-    let datas =  ["Hello","World"]
-    @Query private var localdata : [LocalData]
-    
     var body: some View {
+        
         ZStack(alignment:.top){
             Rectangle()
                 .fill(
@@ -22,37 +19,39 @@ struct Journey: View {
                             startPoint: .top,
                             endPoint: .bottom
                         )
-                ).ignoresSafeArea()
+                    )
+                .frame(height: .infinity).ignoresSafeArea()
             VStack {
                 ZStack{
-                    VStack {
+                    ScrollView {
                         
                         VStack(alignment:.leading) {
                             Text("Journey").font(.system(size: 28,weight: .bold)).padding(.horizontal,25)
                                 .padding(.top,60)
                                 .padding(.bottom,20)
-                            List(localdata) { data in
-                                SegmenView()
-                            }.background(.backgroundApp)
-                                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                            }
+                            SegmenView()
+                            
+                           
                             Spacer().frame(height: 100)
-                    }.frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                }
+                        }
+                    }
                     
                 }
               
-            }.onAppear{
-               
             }
+        }
     }
 }
 
 
 struct SegmenView: View {
+    @Environment(\.modelContext) private var context
     @State private var selectedSegment = 0
     let segments = ["Skipped", "Taken"]
 
+    @State private var jumlahTaken:Int = 0
+    @State private var jumlahSkip:Int = 0
+    @Query private var localdata:[LocalData]
     var body: some View {
         VStack {
             Picker("Pilihan", selection: $selectedSegment) {
@@ -64,18 +63,58 @@ struct SegmenView: View {
             .padding()
 
             if selectedSegment == 0 {
-                HStack{
-                    Text("May 14")
-                        .font(.system(size: 14, weight: .bold)).padding(.horizontal,25)
-                    Spacer()
+                ForEach(localdata.indices, id: \.self) { index in
+                    if (!localdata[index].taken) {
+                        VStack{
+                            HStack{
+                                Text("May 14")
+                                    .font(.system(size: 14, weight: .bold)).padding(.horizontal,25)
+                                Spacer()
+                            }
+                            
+                            CardJourney()
+                        }.onAppear{
+                            jumlahSkip += 1
+                        }
+                    }
                 }
-
-                CardJourney()
+                if (jumlahSkip == 0) {
+                    EmptyJourney()
+                        .padding(100)
+                }
+                
+               
             } else {
-                EmptyJourney()
-                    .padding(100)
+                ForEach(localdata.indices, id: \.self) { index in
+                    if (localdata[index].taken) {
+                        VStack{
+                            HStack{
+                                Text("May 14")
+                                    .font(.system(size: 14, weight: .bold)).padding(.horizontal,25)
+                                Spacer()
+                            }
+                            
+                            CardJourney()
+                        }.onAppear{
+                            jumlahTaken += 1
+                        }
+                    }
+                    
+                }
+                if (jumlahTaken == 0) {
+                    EmptyJourney()
+                        .padding(100)
+                }
             }
         }
+//        .onAppear{
+//            for item in localdata {
+//                    context.delete(item)
+//            }
+//                
+//                // Simpan perubahan
+//            try? context.save()
+//        }
     }
 }
 

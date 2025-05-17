@@ -10,9 +10,16 @@ struct ObatCard: View {
 
     @Query private var localdata : [LocalData]
     func skippedHandle() {
-        let newData = LocalData(date_text: "now", obatName: Tahapan.Default[0].jenis, taken: false, comment: textField)
+        let newData = LocalData(date: getTodayAsNumber(), obatName: Tahapan.Default[0].jenis, taken: false, comment: textField)
         
         context.insert(newData)
+        try? context.save()
+    }
+    
+    func takenHandle() {
+        let newData = LocalData(date: getTodayAsNumber(), obatName: Tahapan.Default[0].jenis, taken: true,comment: "")
+        context.insert(newData)
+        try? context.save()
     }
     
     var body: some View {
@@ -67,7 +74,7 @@ struct ObatCard: View {
                             .foregroundColor(Color.white)
                             .cornerRadius(5)
                     }.alert("Take this medicine",isPresented: $takenAlertShow , actions: {
-                        Button("OK",action:{})
+                        Button("OK",action:takenHandle)
                         Button("Cancel",role: .cancel,action:{})
                     },message: {
                         Text("please make sure your decision")
