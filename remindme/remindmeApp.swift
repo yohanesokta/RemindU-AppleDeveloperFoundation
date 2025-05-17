@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 class AppState:ObservableObject {
     @Published var isWeight: Bool = false
@@ -19,6 +20,7 @@ struct remindmeApp: App {
         WindowGroup {
             if (appState.isWeight) {
                 MainView()
+                    .modelContainer(for: LocalData.self)
                 
             } else {
                 WeightSelected()

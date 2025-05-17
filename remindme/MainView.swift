@@ -71,5 +71,6 @@ struct NavigationCustom: View {
     }
 }
 
-
-
+#Preview{
+    MainView()
+}

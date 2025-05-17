@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import SwiftData
+
 
 struct Journey: View {
+    let datas =  ["Hello","World"]
+    @Query private var localdata : [LocalData]
+    
     var body: some View {
         ZStack(alignment:.top){
             Rectangle()
@@ -17,27 +22,29 @@ struct Journey: View {
                             startPoint: .top,
                             endPoint: .bottom
                         )
-                    )
-                .frame(height: .infinity).ignoresSafeArea()
+                ).ignoresSafeArea()
             VStack {
                 ZStack{
-                    ScrollView {
+                    VStack {
                         
                         VStack(alignment:.leading) {
                             Text("Journey").font(.system(size: 28,weight: .bold)).padding(.horizontal,25)
                                 .padding(.top,60)
                                 .padding(.bottom,20)
-                            SegmenView()
-                            
-                           
+                            List(localdata) { data in
+                                SegmenView()
+                            }.background(.backgroundApp)
+                                .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                            }
                             Spacer().frame(height: 100)
-                        }
-                    }
+                    }.frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                }
                     
                 }
               
+            }.onAppear{
+               
             }
-        }
     }
 }
 
@@ -62,7 +69,7 @@ struct SegmenView: View {
                         .font(.system(size: 14, weight: .bold)).padding(.horizontal,25)
                     Spacer()
                 }
-                
+
                 CardJourney()
             } else {
                 EmptyJourney()

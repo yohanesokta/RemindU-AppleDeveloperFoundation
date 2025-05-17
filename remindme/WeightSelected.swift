@@ -1,12 +1,13 @@
 import SwiftUI
-
+import SwiftData
 
 
 struct WeightSelected:View {
     @EnvironmentObject var appState:AppState
-    
+        
     @State private var selectedSegment = 0
     let segments = ["Children", "Adults"]
+    @Query var users : [userData]
     
     var body: some View {
         NavigationStack{
@@ -55,6 +56,7 @@ struct WeightSelected:View {
                             .background((appState.ageGroub == "adult") ? .blue : .backgroundApp)
                             .cornerRadius(7)
                         }
+                        .background(Color.backgroundApp)
                         .cornerRadius(10)
                     }
                     .padding(.vertical,20)
@@ -72,6 +74,15 @@ struct WeightSelected:View {
                         }
                     }.padding(.top,130)
                 }
+            }.onAppear{
+                let today:Int = getTodayAsNumber()
+                print(today)
+                print(hasPassedDays(startDateNumber:today, offsetDays:0))
+                if !users.isEmpty {
+                    if (users[0].weight > 0){
+                        appState.isWeight = true
+                    }
+                }
             }
            
         }
@@ -85,8 +96,9 @@ struct WeightSelected:View {
 
 struct BeratBadan: View {
     var appState:AppState
+    @AppStorage("selectedBeratBadan") private var selectedBeratBadan =  0
+    @AppStorage("selectedWeight") private var selectedWeight:String = ""
     
-    @AppStorage("selectedBeratBadan") private var selectedBeratBadan =  40
     var rentangBeratBadan: [Int] {
         if appState.ageGroub == "children" {
             return Array(5...50)
