@@ -83,14 +83,11 @@ func dateFromNumber(_ number: Int) -> Date? {
 
 
 
-func getTodayAsNumber() -> Int {
+func getTodayAsNumber(date:Date = Date()) -> Int {
     let calendar = Calendar.current
-    let date = Date()
-    
     let year = calendar.component(.year, from: date)
     let month = calendar.component(.month, from: date)
     let day = calendar.component(.day, from: date)
-    
     return year * 10000 + month * 100 + day
 }
 
@@ -110,19 +107,20 @@ func hasPassedDays(startDateNumber: Int, offsetDays: Int) -> Bool {
 }
 
 
-func compareDateNumbers(_ first: Int, _ second: Int) -> Bool {
+func compareDateNumbers(_ first: Int, _ second: Int) -> Int {
     guard let date1 = dateFromNumber(first),
           let date2 = dateFromNumber(second) else {
-        return false
+        return -1 
     }
 
     let calendar = Calendar.current
     let start1 = calendar.startOfDay(for: date1)
     let start2 = calendar.startOfDay(for: date2)
-    
-    if start1 < start2 {
-        return true
+    if start1 == start2 {
+        return 0
+    } else if start1 < start2 {
+        return 1
     } else {
-        return false
+        return -1
     }
 }

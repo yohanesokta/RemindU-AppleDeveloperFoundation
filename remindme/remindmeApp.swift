@@ -12,6 +12,7 @@ class AppState:ObservableObject {
     @Published var onSplashScreen = true
     @Published var isWeight: Bool = false
     @Published var ageGroub: String = "children"
+    @Published var selectedDate:Date = Date()
 }
 
 @main

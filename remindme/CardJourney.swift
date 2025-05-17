@@ -46,8 +46,6 @@ struct CardJourney: View {
                 .font(.system(size: 12))
                 .padding(.horizontal, 35)
                 .padding(.bottom, 10)
-                
-                    
             }
             .frame(maxWidth: .infinity)
             .background(Color.white)
