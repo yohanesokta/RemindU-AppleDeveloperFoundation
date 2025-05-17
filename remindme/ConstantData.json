@@ -1,0 +1,18 @@
+{
+    "tahapan" : {
+        [   "tahap" : "Intensif",
+            "jumlah" : 56,
+            "jenis" : "RHZE (150/75/400/275)",
+        ],
+        [   "tahap" : "Lanjutan",
+            "jumlah" : 16*7,
+            "jenis" : "RH (150/150)",
+        ]
+    },
+    "beratBadan"  : {
+        "[30,37]" : "2 Tablet 4 KDT",
+        "[38,59]" : "3 Tablet 4 KDT",
+        "[60-70]" : "4 Tablet 4 KDT",
+        "[71,...]" : "3 Tablet 4 KDT",
+    }
+}

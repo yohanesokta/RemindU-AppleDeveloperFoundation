@@ -9,6 +9,7 @@ import SwiftUI
 
 class AppState:ObservableObject {
     @Published var isWeight: Bool = false
+    @Published var ageGroub: String = "children"
 }
 
 @main
@@ -17,7 +18,7 @@ struct remindmeApp: App {
     var body: some Scene {
         WindowGroup {
             if (appState.isWeight) {
-                HomeBar()
+                MainView()
                 
             } else {
                 WeightSelected()
