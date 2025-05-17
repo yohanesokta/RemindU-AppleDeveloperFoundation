@@ -1,27 +1,25 @@
 import SwiftUI
-
-
 enum Tab {
     case home
     case journey
 }
 
 
-struct MainView: View {
+struct mainView: View {
     @State private var selectedTab: Tab = .home
 
     var body: some View {
         VStack(spacing: 0) {
             Group {
                 switch selectedTab {
-                case .home:
-                    HomeBar()
-                case .journey:
-                    Journey()
+                    case .home:
+                        HomeBar()
+                    case .journey:
+                        Journey()
                 }
             }
             .frame(maxHeight: .infinity)
-
+            .background(Color.red)
             NavigationCustom(selectedTab: $selectedTab)
         }
         .edgesIgnoringSafeArea(.bottom)
@@ -72,5 +70,5 @@ struct NavigationCustom: View {
 }
 
 #Preview{
-    MainView()
+    mainView()
 }

@@ -19,7 +19,7 @@ struct remindmeApp: App {
     var body: some Scene {
         WindowGroup {
             if (appState.isWeight) {
-                MainView()
+                mainView()
                     .modelContainer(for: LocalData.self)
                 
             } else {

@@ -18,13 +18,15 @@
 		045C0B082DD5A0AF0073C12D /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C0B072DD5A0AF0073C12D /* Test.swift */; };
 		045D1A5C2DD85A8B001EF919 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1A592DD85A8B001EF919 /* SplashScreen.swift */; };
 		045D1A602DD85AE3001EF919 /* IntensifBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1A5D2DD85AE3001EF919 /* IntensifBar.swift */; };
-		045D1A612DD85AE3001EF919 /* ObatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1A5E2DD85AE3001EF919 /* ObatCard.swift */; };
-		045D1A622DD85AE3001EF919 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1A5F2DD85AE3001EF919 /* DateSelector.swift */; };
-		045D1A642DD85B73001EF919 /* EmptyJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1A632DD85B73001EF919 /* EmptyJourney.swift */; };
+		0470B60F2DD86506004F6CE7 /* EmptyJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470B60E2DD86506004F6CE7 /* EmptyJourney.swift */; };
+		0470B6112DD8655E004F6CE7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470B6102DD8655E004F6CE7 /* Models.swift */; };
 		047895BE2DD0CE7D00113504 /* HomeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047895BD2DD0CE7D00113504 /* HomeBar.swift */; };
 		047895C02DD29EAA00113504 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047895BF2DD29EAA00113504 /* Launch Screen.storyboard */; };
+		04B966DC2DD8661A0069DE9A /* ObatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B966DB2DD8661A0069DE9A /* ObatCard.swift */; };
+		04B967032DD866A80069DE9A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B967022DD866A80069DE9A /* MainView.swift */; };
 		04CEE4A02DD4F09E0074EE76 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEE49F2DD4F09E0074EE76 /* Journey.swift */; };
 		04CEE4A22DD4F1020074EE76 /* CardJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEE4A12DD4F1020074EE76 /* CardJourney.swift */; };
+		04E7EE6C2DD865D500193F9C /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7EE6B2DD865D500193F9C /* DateSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,15 +38,16 @@
 		045C0B072DD5A0AF0073C12D /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		045D1A592DD85A8B001EF919 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		045D1A5D2DD85AE3001EF919 /* IntensifBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntensifBar.swift; sourceTree = "<group>"; };
-		045D1A5E2DD85AE3001EF919 /* ObatCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObatCard.swift; sourceTree = "<group>"; };
-		045D1A5F2DD85AE3001EF919 /* DateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
-		045D1A632DD85B73001EF919 /* EmptyJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyJourney.swift; sourceTree = "<group>"; };
-		0460DDB52DD5AAC1009A7A12 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0470B60E2DD86506004F6CE7 /* EmptyJourney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyJourney.swift; sourceTree = "<group>"; };
+		0470B6102DD8655E004F6CE7 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		047895BD2DD0CE7D00113504 /* HomeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBar.swift; sourceTree = "<group>"; };
 		047895BF2DD29EAA00113504 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		047895C12DD2A31100113504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		04B966DB2DD8661A0069DE9A /* ObatCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObatCard.swift; sourceTree = "<group>"; };
+		04B967022DD866A80069DE9A /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		04CEE49F2DD4F09E0074EE76 /* Journey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		04CEE4A12DD4F1020074EE76 /* CardJourney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardJourney.swift; sourceTree = "<group>"; };
+		04E7EE6B2DD865D500193F9C /* DateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +88,7 @@
 				045C0B062DD5A04D0073C12D /* HomeComponents */,
 				0448DF7B2DC99B4F005EB1AA /* remindmeApp.swift */,
 				0448DF7D2DC99B4F005EB1AA /* WeightSelected.swift */,
-				0460DDB52DD5AAC1009A7A12 /* MainView.swift */,
+				04B967022DD866A80069DE9A /* MainView.swift */,
 				047895BD2DD0CE7D00113504 /* HomeBar.swift */,
 				04CEE49F2DD4F09E0074EE76 /* Journey.swift */,
 				0448DF7F2DC99B50005EB1AA /* Assets.xcassets */,
@@ -105,14 +108,11 @@
 		045C0B062DD5A04D0073C12D /* HomeComponents */ = {
 			isa = PBXGroup;
 			children = (
-				045D1A5F2DD85AE3001EF919 /* DateSelector.swift */,
+				04B966DB2DD8661A0069DE9A /* ObatCard.swift */,
+				04E7EE6B2DD865D500193F9C /* DateSelector.swift */,
+				0470B60E2DD86506004F6CE7 /* EmptyJourney.swift */,
 				045D1A5D2DD85AE3001EF919 /* IntensifBar.swift */,
-				045D1A5E2DD85AE3001EF919 /* ObatCard.swift */,
 				04CEE4A12DD4F1020074EE76 /* CardJourney.swift */,
-				042D517D2DD2E12300215B71 /* IntensifBar.swift */,
-				042D517F2DD2E17F00215B71 /* DateSelector.swift */,
-				0421490B2DD43FEC004F2B12 /* ObatCard.swift */,
-				0460DDB72DD5D681009A7A12 /* EmptyJourney.swift */,
 			);
 			name = HomeComponents;
 			sourceTree = "<group>";
@@ -120,6 +120,7 @@
 		047895C72DD2A4A200113504 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0470B6102DD8655E004F6CE7 /* Models.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -196,19 +197,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0470B60F2DD86506004F6CE7 /* EmptyJourney.swift in Sources */,
+				0470B6112DD8655E004F6CE7 /* Models.swift in Sources */,
 				0448DF7E2DC99B4F005EB1AA /* WeightSelected.swift in Sources */,
 				0448DF7C2DC99B4F005EB1AA /* remindmeApp.swift in Sources */,
 				047895BE2DD0CE7D00113504 /* HomeBar.swift in Sources */,
-				045D1A642DD85B73001EF919 /* EmptyJourney.swift in Sources */,
 				04CEE4A02DD4F09E0074EE76 /* Journey.swift in Sources */,
 				045C0B082DD5A0AF0073C12D /* Test.swift in Sources */,
 				042149112DD44488004F2B12 /* (null) in Sources */,
 				045D1A5C2DD85A8B001EF919 /* SplashScreen.swift in Sources */,
+				04B967032DD866A80069DE9A /* MainView.swift in Sources */,
 				042D51802DD2E17F00215B71 /* (null) in Sources */,
 				045D1A602DD85AE3001EF919 /* IntensifBar.swift in Sources */,
 				042D517E2DD2E12300215B71 /* (null) in Sources */,
+				04B966DC2DD8661A0069DE9A /* ObatCard.swift in Sources */,
+				04E7EE6C2DD865D500193F9C /* DateSelector.swift in Sources */,
 				04CEE4A22DD4F1020074EE76 /* CardJourney.swift in Sources */,
-				045C0B032DD588330073C12D /* SwiftUIDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
