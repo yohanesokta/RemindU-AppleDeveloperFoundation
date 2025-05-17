@@ -6,6 +6,7 @@ enum Tab {
 
 
 struct mainView: View {
+    
     @State private var selectedTab: Tab = .home
 
     var body: some View {

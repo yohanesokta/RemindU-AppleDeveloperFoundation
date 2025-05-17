@@ -2,8 +2,12 @@ import SwiftUI
 import SwiftData
 
 struct ObatCard: View {
+    var disable = false
+    var deleteAnim:()->Void = {}
+    
     @Environment(\.modelContext) private var context
     
+    @State private var alertDisableShow = false
     @State private var alertShow: Bool = false
     @State private var takenAlertShow: Bool = false
     @State private var textField: String = ""
@@ -14,12 +18,14 @@ struct ObatCard: View {
         
         context.insert(newData)
         try? context.save()
+        deleteAnim()
     }
     
     func takenHandle() {
         let newData = LocalData(date: getTodayAsNumber(), obatName: Tahapan.Default[0].jenis, taken: true,comment: "")
         context.insert(newData)
         try? context.save()
+        deleteAnim()
     }
     
     var body: some View {
@@ -49,7 +55,13 @@ struct ObatCard: View {
                 .padding(.bottom,10)
                 .padding(.leading,35)
                 HStack{
-                    Button(action:{alertShow = true}){
+                    Button(action:{
+                        if (disable){
+                            alertDisableShow = true
+                        }else{
+                            alertShow = true
+                        }
+                    }){
                         Text("Skipped")
                             .font(.system(size: 12,weight: .bold))
                             .padding(.horizontal,50)
@@ -65,7 +77,13 @@ struct ObatCard: View {
                         Text("please write a note why this skipped")
                     })
                     Spacer()
-                    Button(action:{takenAlertShow = true}){
+                    Button(action:{
+                        if (disable){
+                            alertDisableShow = true
+                        } else {
+                            takenAlertShow = true
+                        }
+                    }){
                         Text("Taken")
                             .font(.system(size: 12,weight: .bold))
                             .padding(.horizontal,50)
@@ -83,9 +101,15 @@ struct ObatCard: View {
                     
             }
             .background(Color.white)
+            .opacity(disable ? 0.8 : 1.0)
             .cornerRadius(10)
             .padding(.horizontal,20)
-        }
+        }.alert("Warning",isPresented: $alertDisableShow,actions: {
+            Button("OK",role: .cancel) {}
+        },message: {
+            Text("Perform In another day")
+        })
+        
     }
 }
 

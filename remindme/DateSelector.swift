@@ -1,12 +1,15 @@
 import SwiftUI
+import SwiftData
 
 struct DateSelector: View {
+    @EnvironmentObject var appState:AppState
+    
+    @State private var selectedDate:Date = Date()
     let calendar = Calendar.current
     let today = Calendar.current.startOfDay(for: Date())
     
     let dates: [Date]
     
-    @State private var selectedDate: Date = Date()
     
     init() {
         let range = calendar.range(of: .day, in: .month, for: today)!
@@ -23,7 +26,6 @@ struct DateSelector: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            
             HStack {
                 Rectangle()
                     .frame(height: 1)
@@ -61,7 +63,7 @@ struct DateSelector: View {
                                         .foregroundColor(selectedDate == calendar.startOfDay(for: date) ? .white : .black)
                                         
                                 }
-                                .id(date) // Untuk scrollTo
+                                .id(date)
                             }
                         }
                     }
@@ -86,6 +88,10 @@ struct DateSelector: View {
         .background(Color.white)
         .cornerRadius(10)
         .padding(.horizontal, 20)
+        .onChange(of: selectedDate) {
+            appState.selectedDate = selectedDate
+            print(selectedDate)
+        }
     }
 
     func formattedDate(_ date: Date, format: String) -> String {
@@ -100,6 +106,7 @@ struct DateSelector: View {
     ZStack {
         Color.gray.opacity(0.2).ignoresSafeArea()
         DateSelector()
+            .environmentObject(AppState())
     }
 }
 
