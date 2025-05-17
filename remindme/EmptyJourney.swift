@@ -25,3 +25,4 @@ struct EmptyJourney: View {
 #Preview {
     EmptyJourney()
 }
+

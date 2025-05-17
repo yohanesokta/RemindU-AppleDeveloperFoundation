@@ -3,4 +3,52 @@
    uuid = "6FEE6388-CB4D-4AC4-A766-B7BB803DD501"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6EFBFD58-1B5B-4989-A8A3-5E0510A06420"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "remindme/WeightSelected.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "WeightSelected"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "6EFBFD58-1B5B-4989-A8A3-5E0510A06420 - 7a3cfcaa3b662279"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "remindme.WeightSelected.init() -&gt; remindme.WeightSelected"
+                  moduleName = "remindme"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/RemindU-AppleDeveloperFoundation/remindme/WeightSelected.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9">
+               </Location>
+               <Location
+                  uuid = "6EFBFD58-1B5B-4989-A8A3-5E0510A06420 - 16a6a039175e99e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "remindme.WeightSelected.init(appState: SwiftUI.EnvironmentObject&lt;remindme.AppState&gt;) -&gt; remindme.WeightSelected"
+                  moduleName = "remindme"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mac/Documents/RemindU-AppleDeveloperFoundation/remindme/WeightSelected.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "9"
+                  endingLineNumber = "9">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

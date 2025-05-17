@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0421490C2DD43FEC004F2B12 /* ObatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0421490B2DD43FEC004F2B12 /* ObatCard.swift */; };
-		042149112DD44488004F2B12 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042149102DD44488004F2B12 /* Models.swift */; };
-		042149132DD4478B004F2B12 /* ConstantData.json in Resources */ = {isa = PBXBuildFile; fileRef = 042149122DD4478B004F2B12 /* ConstantData.json */; };
-		042D517E2DD2E12300215B71 /* IntensifBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D517D2DD2E12300215B71 /* IntensifBar.swift */; };
-		042D51802DD2E17F00215B71 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D517F2DD2E17F00215B71 /* DateSelector.swift */; };
+		042149112DD44488004F2B12 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		042149132DD4478B004F2B12 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		042D517E2DD2E12300215B71 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		042D51802DD2E17F00215B71 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		0448DF7C2DC99B4F005EB1AA /* remindmeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448DF7B2DC99B4F005EB1AA /* remindmeApp.swift */; };
 		0448DF7E2DC99B4F005EB1AA /* WeightSelected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448DF7D2DC99B4F005EB1AA /* WeightSelected.swift */; };
 		0448DF802DC99B50005EB1AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0448DF7F2DC99B50005EB1AA /* Assets.xcassets */; };
 		0448DF832DC99B50005EB1AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0448DF822DC99B50005EB1AA /* Preview Assets.xcassets */; };
 		045C0B082DD5A0AF0073C12D /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045C0B072DD5A0AF0073C12D /* Test.swift */; };
-		0460DDB62DD5AAC1009A7A12 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460DDB52DD5AAC1009A7A12 /* MainView.swift */; };
-		0460DDB82DD5D681009A7A12 /* EmptyJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0460DDB72DD5D681009A7A12 /* EmptyJourney.swift */; };
+		045D1A5C2DD85A8B001EF919 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1A592DD85A8B001EF919 /* SplashScreen.swift */; };
+		045D1A602DD85AE3001EF919 /* IntensifBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1A5D2DD85AE3001EF919 /* IntensifBar.swift */; };
+		045D1A612DD85AE3001EF919 /* ObatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1A5E2DD85AE3001EF919 /* ObatCard.swift */; };
+		045D1A622DD85AE3001EF919 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1A5F2DD85AE3001EF919 /* DateSelector.swift */; };
+		045D1A642DD85B73001EF919 /* EmptyJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045D1A632DD85B73001EF919 /* EmptyJourney.swift */; };
 		047895BE2DD0CE7D00113504 /* HomeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047895BD2DD0CE7D00113504 /* HomeBar.swift */; };
 		047895C02DD29EAA00113504 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047895BF2DD29EAA00113504 /* Launch Screen.storyboard */; };
 		04CEE4A02DD4F09E0074EE76 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEE49F2DD4F09E0074EE76 /* Journey.swift */; };
@@ -26,19 +28,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0421490B2DD43FEC004F2B12 /* ObatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObatCard.swift; sourceTree = "<group>"; };
-		042149102DD44488004F2B12 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		042149122DD4478B004F2B12 /* ConstantData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ConstantData.json; sourceTree = "<group>"; };
-		042D517D2DD2E12300215B71 /* IntensifBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensifBar.swift; sourceTree = "<group>"; };
-		042D517F2DD2E17F00215B71 /* DateSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
 		0448DF782DC99B4F005EB1AA /* remindme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = remindme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0448DF7B2DC99B4F005EB1AA /* remindmeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remindmeApp.swift; sourceTree = "<group>"; };
 		0448DF7D2DC99B4F005EB1AA /* WeightSelected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightSelected.swift; sourceTree = "<group>"; };
 		0448DF7F2DC99B50005EB1AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0448DF822DC99B50005EB1AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		045C0B072DD5A0AF0073C12D /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		045D1A592DD85A8B001EF919 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		045D1A5D2DD85AE3001EF919 /* IntensifBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntensifBar.swift; sourceTree = "<group>"; };
+		045D1A5E2DD85AE3001EF919 /* ObatCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObatCard.swift; sourceTree = "<group>"; };
+		045D1A5F2DD85AE3001EF919 /* DateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
+		045D1A632DD85B73001EF919 /* EmptyJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyJourney.swift; sourceTree = "<group>"; };
 		0460DDB52DD5AAC1009A7A12 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		0460DDB72DD5D681009A7A12 /* EmptyJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyJourney.swift; sourceTree = "<group>"; };
 		047895BD2DD0CE7D00113504 /* HomeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBar.swift; sourceTree = "<group>"; };
 		047895BF2DD29EAA00113504 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		047895C12DD2A31100113504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		0448DF6F2DC99B4F005EB1AA = {
 			isa = PBXGroup;
 			children = (
+				045D1A592DD85A8B001EF919 /* SplashScreen.swift */,
 				047895BF2DD29EAA00113504 /* Launch Screen.storyboard */,
 				0448DF7A2DC99B4F005EB1AA /* remindme */,
 				0448DF792DC99B4F005EB1AA /* Products */,
@@ -103,6 +105,9 @@
 		045C0B062DD5A04D0073C12D /* HomeComponents */ = {
 			isa = PBXGroup;
 			children = (
+				045D1A5F2DD85AE3001EF919 /* DateSelector.swift */,
+				045D1A5D2DD85AE3001EF919 /* IntensifBar.swift */,
+				045D1A5E2DD85AE3001EF919 /* ObatCard.swift */,
 				04CEE4A12DD4F1020074EE76 /* CardJourney.swift */,
 				042D517D2DD2E12300215B71 /* IntensifBar.swift */,
 				042D517F2DD2E17F00215B71 /* DateSelector.swift */,
@@ -115,8 +120,6 @@
 		047895C72DD2A4A200113504 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				042149102DD44488004F2B12 /* Models.swift */,
-				042149122DD4478B004F2B12 /* ConstantData.json */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -180,7 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				047895C02DD29EAA00113504 /* Launch Screen.storyboard in Resources */,
-				042149132DD4478B004F2B12 /* ConstantData.json in Resources */,
+				042149132DD4478B004F2B12 /* (null) in Resources */,
 				0448DF832DC99B50005EB1AA /* Preview Assets.xcassets in Resources */,
 				0448DF802DC99B50005EB1AA /* Assets.xcassets in Resources */,
 			);
@@ -193,18 +196,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0460DDB82DD5D681009A7A12 /* EmptyJourney.swift in Sources */,
-				0421490C2DD43FEC004F2B12 /* ObatCard.swift in Sources */,
-				0460DDB62DD5AAC1009A7A12 /* MainView.swift in Sources */,
 				0448DF7E2DC99B4F005EB1AA /* WeightSelected.swift in Sources */,
 				0448DF7C2DC99B4F005EB1AA /* remindmeApp.swift in Sources */,
 				047895BE2DD0CE7D00113504 /* HomeBar.swift in Sources */,
+				045D1A642DD85B73001EF919 /* EmptyJourney.swift in Sources */,
 				04CEE4A02DD4F09E0074EE76 /* Journey.swift in Sources */,
 				045C0B082DD5A0AF0073C12D /* Test.swift in Sources */,
-				042149112DD44488004F2B12 /* Models.swift in Sources */,
-				042D51802DD2E17F00215B71 /* DateSelector.swift in Sources */,
-				042D517E2DD2E12300215B71 /* IntensifBar.swift in Sources */,
+				042149112DD44488004F2B12 /* (null) in Sources */,
+				045D1A5C2DD85A8B001EF919 /* SplashScreen.swift in Sources */,
+				042D51802DD2E17F00215B71 /* (null) in Sources */,
+				045D1A602DD85AE3001EF919 /* IntensifBar.swift in Sources */,
+				042D517E2DD2E12300215B71 /* (null) in Sources */,
 				04CEE4A22DD4F1020074EE76 /* CardJourney.swift in Sources */,
+				045C0B032DD588330073C12D /* SwiftUIDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"remindme/Preview Content\"";
-				DEVELOPMENT_TEAM = PLU9RKK98N;
+				DEVELOPMENT_TEAM = 9UT33Q9U3U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = remindme/Info.plist;
@@ -372,7 +376,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"remindme/Preview Content\"";
-				DEVELOPMENT_TEAM = PLU9RKK98N;
+				DEVELOPMENT_TEAM = 9UT33Q9U3U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = remindme/Info.plist;

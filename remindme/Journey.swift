@@ -73,6 +73,7 @@ struct SegmenView: View {
                 CardJourney()
             } else {
                 EmptyJourney()
+                    .padding(100)
             }
         }
     }

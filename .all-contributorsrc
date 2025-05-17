@@ -1,0 +1,45 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "bintangandk",
+      "name": "bintangandk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/124556644?v=4",
+      "profile": "https://github.com/bintangandk",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "yohanesokta",
+      "name": "Yohanes Oktanio",
+      "avatar_url": "https://avatars.githubusercontent.com/u/111877508?v=4",
+      "profile": "http://me.yohancloud.biz.id",
+      "contributions": [
+        "data",
+        "code"
+      ]
+    },
+    {
+      "login": "gfann21",
+      "name": "gfann21",
+      "avatar_url": "https://avatars.githubusercontent.com/u/211432094?v=4",
+      "profile": "https://github.com/gfann21",
+      "contributions": [
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "RemindU-AppleDeveloperFoundation",
+  "projectOwner": "yohanesokta"
+}
