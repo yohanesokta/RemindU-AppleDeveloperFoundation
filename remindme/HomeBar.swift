@@ -1,7 +1,7 @@
-
+import SwiftData
 import SwiftUI
 
-struct HomeBar: View {  
+struct HomeBar: View {
     var body: some View {
         ZStack(alignment:.top){
             Rectangle()
@@ -26,10 +26,7 @@ struct HomeBar: View {
                             Spacer().frame(height: 100)
                         }
                     }
-
-                    
                 }
-              
             }
         }
     }

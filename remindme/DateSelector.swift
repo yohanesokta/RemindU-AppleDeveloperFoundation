@@ -1,10 +1,3 @@
-//
-//  DateSelector.swift
-//  remindme
-//
-//  Created by MacBook on 13/05/25.
-//
-
 import SwiftUI
 
 struct DateSelector: View {
@@ -12,82 +5,87 @@ struct DateSelector: View {
     let today = Calendar.current.startOfDay(for: Date())
     
     let dates: [Date]
-    @State private var selectedDate: Date?
-
+    
+    @State private var selectedDate: Date = Date()
+    
     init() {
-        let calendar = Calendar.current
-        let today = calendar.startOfDay(for: Date())
-
-        let weekday = calendar.component(.weekday, from: today)
-
-        let startOfWeek = calendar.date(byAdding: .day, value: -(weekday - 1), to: today)!
-        self.dates = (0..<7).compactMap {
-            calendar.date(byAdding: .day, value: $0, to: startOfWeek)
+        let range = calendar.range(of: .day, in: .month, for: today)!
+        let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: today))!
+        
+        var tempDates: [Date] = []
+        for day in range {
+            if let date = calendar.date(byAdding: .day, value: day - 1, to: startOfMonth) {
+                tempDates.append(date)
+            }
         }
-        _selectedDate = State(initialValue: today)
+        self.dates = tempDates
     }
-
+    
     var body: some View {
-        VStack(alignment: .leading){
-            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
+        VStack(alignment: .leading) {
+            
+            HStack {
                 Rectangle()
                     .frame(height: 1)
-                    .frame(width: 325)
+                    .frame(maxWidth: .infinity)
                     .foregroundColor(Color.darkGray)
-            }.padding(.horizontal,10).padding(.top,10)
+            }
+            .padding(.horizontal, 10)
+            .padding(.top, 10)
 
+            Text(formattedDate(today, format: "MMMM yyyy"))
+                .font(.system(size: 16, weight: .bold))
+                .padding(.horizontal, 15)
+                .padding(.top, 10)
+                .padding(.bottom, 5)
             
-            VStack() {
-                HStack(alignment: .center,spacing: 5){
-                    Text("June 2024").font(.system(size: 16,weight: .bold))
-                }
-                
-                
-            }.padding(.horizontal,15).padding(.top,10).padding(.bottom,5)
-            
-            
-            HStack(spacing: 4) {
-                ForEach(dates, id: \.self) { date in
-                    VStack {
-                        Text(formattedDate(date, format: "E"))
-                            .font(.system(size: 14)).foregroundStyle(Color.gray)
-                    }
-                    .frame(width: 45)
-                    .foregroundColor(.black)
-                    .padding(.vertical,10)
-                }
-            }.frame(width: 300).padding(.horizontal,25)
 
-            HStack(spacing: 8) {
-                ForEach(dates, id: \.self) { date in
-                    Button(action: {
-                        selectedDate = calendar.startOfDay(for: date)
-                    }) {
-                        VStack {
-                            Text(formattedDate(date, format: "d")).font(.system(size: 14))
+            ScrollViewReader { scrollProxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(dates, id: \.self) { date in
+                            Button(action: {
+                                selectedDate = calendar.startOfDay(for: date)
+                            }) {
+                                VStack {
+                                    Text(formattedDate(date, format: "E"))
+                                        .font(.system(size: 12))
+                                        .foregroundColor(.gray)
+                                        .padding(.bottom,10)
+                                        .padding(.top,5)
+                                    Text(formattedDate(date, format: "d"))
+                                        .font(.system(size: 14))
+                                        .frame(width: 30,height: 30)
+                                        .background(selectedDate == calendar.startOfDay(for: date) ? Color.bluePrimary : Color.white)
+                                        .cornerRadius(50)
+                                        .foregroundColor(selectedDate == calendar.startOfDay(for: date) ? .white : .black)
+                                        
+                                }
+                                .id(date) // Untuk scrollTo
+                            }
                         }
-                        .frame(width: 40, height: 40)
-                        .background(selectedDate == calendar.startOfDay(for: date) ? Color.bluePrimary : .white)
-                        .foregroundColor(selectedDate == calendar.startOfDay(for: date) ? .white : .black)
-                        .cornerRadius(100)
+                    }
+                    .padding(.horizontal, 20)
+                }
+                .onAppear {
+                    selectedDate = today
+                    DispatchQueue.main.async {
+                        scrollProxy.scrollTo(today, anchor: .center)
                     }
                 }
-            }.frame(width:300).padding(.horizontal,25)
-            .frame(width: 350, height: 50)
-            
-            
-            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/){
+            }
+            HStack {
                 Rectangle()
                     .frame(height: 1)
-                    .frame(width: 325)
+                    .frame(maxWidth: .infinity)
                     .foregroundColor(Color.darkGray)
-            }.padding(.horizontal,10).padding(.vertical,10)
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 10)
         }
-        .background(Color(UIColor.white))
+        .background(Color.white)
         .cornerRadius(10)
-        .padding(.horizontal,20)
-        
-        
+        .padding(.horizontal, 20)
     }
 
     func formattedDate(_ date: Date, format: String) -> String {
@@ -99,9 +97,8 @@ struct DateSelector: View {
 }
 
 #Preview {
-    ZStack{
-        Color.backgroundApp.ignoresSafeArea()
+    ZStack {
+        Color.gray.opacity(0.2).ignoresSafeArea()
         DateSelector()
     }
-    
 }

@@ -1,16 +1,31 @@
 import SwiftUI
+import SwiftData
 
 struct IntensifBar : View {
     @State private var info:Bool = false
+    @State private var taken = 0
+    @State private var skip = 0
     
     let current: Double = 10
     let total: Double = 56
 
-    let persen : Double = 50 / (50+10)
+    
     var progress: Double {
             current / total
     }
-
+    
+    @Query var localdata:[LocalData]
+    func hitungTaken() {
+        for data in localdata {
+            print(data.taken)
+            if (data.taken) {
+                taken += 1
+            } else {
+                skip += 1
+            }
+        }
+        print(skip)
+    }
     var body: some View {
         VStack(alignment : .leading,spacing: 10) {
                 HStack(){
@@ -64,16 +79,16 @@ struct IntensifBar : View {
                                                             .font(.system(size: 12))
                                                             .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                                                     }
-                                                }.padding(.trailing,10)
+                                                }.padding(.leading,30)
                                                 
-                                            }
+                                            }.padding(.trailing,30)
                                             VStack{
                                                 HStack{
                                                     Image(systemName: "circle.fill")
                                                         .resizable()
                                                         .frame(width: 10)
                                                         .frame(height: 10)
-                                                        .foregroundColor(Color.yellow)
+                                                        .foregroundColor(Color.orange)
                                                     Text("Continuation Phase")
                                                     
                                                 }
@@ -140,7 +155,7 @@ struct IntensifBar : View {
             
             HStack(){
                 HStack(alignment: .bottom){
-                    Text("50").font(.system(size: 20)).padding(.horizontal,15)
+                    Text("\(taken)").font(.system(size: 20)).padding(.horizontal,15)
                     Spacer()
                     Text("Taken").font(.system(size: 12)).padding(.horizontal,15)
                 }.frame(width:153)
@@ -149,7 +164,7 @@ struct IntensifBar : View {
                     .cornerRadius(5)
                 
                 HStack(alignment: .bottom){
-                    Text("10").font(.system(size: 20)).padding(.horizontal,15)
+                    Text("\(skip)").font(.system(size: 20)).padding(.horizontal,15)
                     Spacer()
                     Text("Skipped").font(.system(size: 12)).padding(.horizontal,15)
                 }.frame(width:153)
@@ -163,6 +178,9 @@ struct IntensifBar : View {
         .background(Color.white)
         .cornerRadius(10)
         .padding(.horizontal,20)
+        .onAppear{
+            hitungTaken()
+        }
     }
 }
 
