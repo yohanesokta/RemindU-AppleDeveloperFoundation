@@ -51,11 +51,11 @@ class userData {
 class LocalData:Identifiable {
     @Attribute(.unique) var id: UUID
     var obatName : String
-    var date : String
+    var date : Int
     var taken : Bool
     var comments : String?
-    init(date_text:String, obatName:String,taken:Bool,comment:String?) {
-        self.date = date_text
+    init(date:Int, obatName:String,taken:Bool,comment:String?) {
+        self.date = date
         self.id = UUID()
         self.obatName = obatName
         self.taken = taken
