@@ -15,6 +15,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "yohanesokta",
+      "name": "Yohanes Oktanio",
+      "avatar_url": "https://avatars.githubusercontent.com/u/111877508?v=4",
+      "profile": "http://me.yohancloud.biz.id",
+      "contributions": [
+        "data",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
