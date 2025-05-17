@@ -25,6 +25,15 @@
         "data",
         "code"
       ]
+    },
+    {
+      "login": "gfann21",
+      "name": "gfann21",
+      "avatar_url": "https://avatars.githubusercontent.com/u/211432094?v=4",
+      "profile": "https://github.com/gfann21",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
