@@ -6,12 +6,28 @@ struct IntensifBar : View {
     @State private var taken = 0
     @State private var skip = 0
     
-    let current: Double = 10
-    let total: Double = 56
-
+    let userdata = loadUserDataFromJSON()
     
-    var progress: Double {
-            current / total
+    let current: Double = 10
+    
+   
+    
+    let total: Double = 56
+    
+    
+    @State private var progress: Double = 1/60
+    @State private var Dayin: Int = 0
+    func hitungCurrentDate() {
+        if (userdata?.startedDay ?? 0 >= 0) {
+            let value = userdata?.startedDay ?? 0
+//            let value = 20250505
+            var days = daysSince(startDateNumber: value) ?? 0
+            days += 1
+            print("day \(days) \(value)")
+            Dayin = days
+            progress = Double(days) / total
+            print("Progress \(progress)")
+        }
     }
     
     @Query var localdata:[LocalData]
@@ -138,8 +154,8 @@ struct IntensifBar : View {
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 
                 HStack(alignment: .center) {
-                    Text("\(Int(current)) day")
-                        .foregroundColor(.white)
+                    Text("\(Int(Dayin)) day")
+                        .foregroundColor((Dayin > 12) ? .white: .black)
                         .multilineTextAlignment(.leading)
                         .bold().padding(.horizontal,10)
                     Spacer()
@@ -179,6 +195,7 @@ struct IntensifBar : View {
         .padding(.horizontal,20)
         .onAppear{
             hitungTaken()
+            hitungCurrentDate()
         }.onChange(of: localdata) {
             hitungTaken()
         }

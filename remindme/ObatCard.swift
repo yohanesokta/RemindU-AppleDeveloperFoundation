@@ -7,6 +7,8 @@ struct ObatCard: View {
     
     @Environment(\.modelContext) private var context
     
+    
+    @State private var message:String = "Please take another day"
     @State private var alertDisableShow = false
     @State private var alertShow: Bool = false
     @State private var takenAlertShow: Bool = false
@@ -14,11 +16,16 @@ struct ObatCard: View {
 
     @Query private var localdata : [LocalData]
     func skippedHandle() {
-        let newData = LocalData(date: getTodayAsNumber(), obatName: Tahapan.Default[0].jenis, taken: false, comment: textField)
-        
-        context.insert(newData)
-        try? context.save()
-        deleteAnim()
+        if(textField == "") {
+            message = "Please Write the Skipped Message"
+            alertDisableShow = true
+        } else {
+            let newData = LocalData(date: getTodayAsNumber(), obatName: Tahapan.Default[0].jenis, taken: false, comment: textField)
+            
+            context.insert(newData)
+            try? context.save()
+            deleteAnim()
+        }
     }
     
     func takenHandle() {
@@ -107,16 +114,16 @@ struct ObatCard: View {
         }.alert("Warning",isPresented: $alertDisableShow,actions: {
             Button("OK",role: .cancel) {}
         },message: {
-            Text("Perform In another day")
+            Text(message)
         })
         
     }
 }
 
-#Preview {
-    ZStack{
-        Color.backgroundApp.ignoresSafeArea()
-        ObatCard()
-    }
-    
-}
+//#Preview {
+//    ZStack{
+//        Color.backgroundApp.ignoresSafeArea()
+//        ObatCard()
+//    }
+//    
+//}
