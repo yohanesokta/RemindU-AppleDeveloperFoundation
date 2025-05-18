@@ -20,7 +20,7 @@ struct Journey: View {
                             endPoint: .bottom
                         )
                     )
-                .frame(height: .infinity).ignoresSafeArea()
+                .frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).ignoresSafeArea()
             VStack {
                 ZStack{
                     ScrollView {
@@ -45,7 +45,7 @@ struct Journey: View {
 
 
 struct SegmenView: View {
-    @Environment(\.modelContext) private var context
+    @Environment(\.modelContext) private var context 
     @State private var selectedSegment = 0
     let segments = ["Skipped", "Taken"]
 
@@ -107,14 +107,7 @@ struct SegmenView: View {
                 }
             }
         }
-//        .onAppear{
-//            for item in localdata {
-//                    context.delete(item)
-//            }
-//                
-//                // Simpan perubahan
-//            try? context.save()
-//        }
+
     }
 }
 

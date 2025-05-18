@@ -2,6 +2,8 @@ import SwiftUI
 import SwiftData
 
 struct IntensifBar : View {
+    
+    @Environment(\.modelContext) private var context
     @State private var info:Bool = false
     @State private var taken = 0
     @State private var skip = 0
@@ -9,12 +11,20 @@ struct IntensifBar : View {
     let userdata = loadUserDataFromJSON()
     
     let current: Double = 10
-    
-   
-    
+
     let total: Double = 56
     
+
     
+    func resetProgres(){
+        for item in localdata {
+                context.delete(item)
+        }
+
+        try? context.save()
+        
+        saveUserDataToJSON(UserData(startedDay: 0, weight: 0, jenisObat: "", tahapan: 0))
+    }
     @State private var progress: Double = 1/60
     @State private var Dayin: Int = 0
     func hitungCurrentDate() {
@@ -44,6 +54,7 @@ struct IntensifBar : View {
     var body: some View {
         VStack(alignment : .leading,spacing: 10) {
                 HStack(){
+                    
                     Text("Intensive Phase").font(.system(size: 18,weight: .bold))
                     Button(action : {
                         info = true
@@ -59,7 +70,7 @@ struct IntensifBar : View {
                                     }
                                     VStack(alignment:.center){
                                         Text("Intensive Phase")
-                                            .font(.system(size: 18,weight: .bold))
+                                                .font(.system(size: 18,weight: .bold))
                                         
                                         Text("Treatment for tuberculosis (TB) consists of the Intensive Phase and the Continuation Phase. The Intensive Phase is the initial 2-month stage. Its purpose is to reduce the number of active bacteria in the body.")
                                             .font(.system(size: 12))
@@ -73,7 +84,7 @@ struct IntensifBar : View {
                                                 Text("TB Treatment Timeline")
                                                     .font(.headline)
                                             }
-// Start
+                                            
                                             VStack{
                                                 HStack{
                                                     Image(systemName: "circle.fill")
@@ -134,6 +145,17 @@ struct IntensifBar : View {
                                     .background(Color.backgroundApp)
                             }
                     }
+                    Spacer()
+                    Menu {
+                        Button("Stop Progresi",action: resetProgres)
+                    } label: {
+                            Image(systemName: "gear.circle.fill")
+                                .resizable()
+                                .foregroundColor(.gray)
+                                .frame(width: 14,height: 14)
+                    }.padding(.all,5)
+                                            .background(Color.backgroundApp)
+                                            .cornerRadius(5)
                     
                 }.padding(.horizontal,20)
             Text("Your Summary Today").font(.system(size: 12)).padding(.bottom,15).padding(.horizontal,20)

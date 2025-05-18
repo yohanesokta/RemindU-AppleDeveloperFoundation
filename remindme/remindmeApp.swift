@@ -19,6 +19,7 @@ class AppState:ObservableObject {
 
 @main
 struct remindmeApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var appState = AppState()
     var body: some Scene {
         WindowGroup {

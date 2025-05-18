@@ -26,6 +26,10 @@
 		04B967032DD866A80069DE9A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B967022DD866A80069DE9A /* MainView.swift */; };
 		04CEE4A02DD4F09E0074EE76 /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEE49F2DD4F09E0074EE76 /* Journey.swift */; };
 		04CEE4A22DD4F1020074EE76 /* CardJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEE4A12DD4F1020074EE76 /* CardJourney.swift */; };
+		04D90EE62DDA2104000D8066 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D90EE52DDA2104000D8066 /* SwiftUIView.swift */; };
+		04D90EE82DDA2C7D000D8066 /* appleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D90EE72DDA2C7D000D8066 /* appleDelegate.swift */; };
+		04D90EED2DDA35D7000D8066 /* Alarm01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 04D90EEC2DDA35D7000D8066 /* Alarm01.wav */; };
+		04D90EEF2DDA38F9000D8066 /* Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D90EEE2DDA38F9000D8066 /* Configure.swift */; };
 		04E7EE6C2DD865D500193F9C /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7EE6B2DD865D500193F9C /* DateSelector.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +51,10 @@
 		04B967022DD866A80069DE9A /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		04CEE49F2DD4F09E0074EE76 /* Journey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		04CEE4A12DD4F1020074EE76 /* CardJourney.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardJourney.swift; sourceTree = "<group>"; };
+		04D90EE52DDA2104000D8066 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		04D90EE72DDA2C7D000D8066 /* appleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appleDelegate.swift; sourceTree = "<group>"; };
+		04D90EEC2DDA35D7000D8066 /* Alarm01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Alarm01.wav; sourceTree = "<group>"; };
+		04D90EEE2DDA38F9000D8066 /* Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configure.swift; sourceTree = "<group>"; };
 		04E7EE6B2DD865D500193F9C /* DateSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +89,7 @@
 		0448DF7A2DC99B4F005EB1AA /* remindme */ = {
 			isa = PBXGroup;
 			children = (
+				04D90EEB2DDA35C7000D8066 /* Alarm */,
 				047895C12DD2A31100113504 /* Info.plist */,
 				047895C72DD2A4A200113504 /* Models */,
 				0448DF812DC99B50005EB1AA /* Preview Content */,
@@ -112,6 +121,7 @@
 				0470B60E2DD86506004F6CE7 /* EmptyJourney.swift */,
 				045D1A5D2DD85AE3001EF919 /* IntensifBar.swift */,
 				04CEE4A12DD4F1020074EE76 /* CardJourney.swift */,
+				04D90EE52DDA2104000D8066 /* SwiftUIView.swift */,
 			);
 			name = HomeComponents;
 			sourceTree = "<group>";
@@ -121,8 +131,18 @@
 			children = (
 				0470B6102DD8655E004F6CE7 /* Models.swift */,
 				045664142DD966240075AB57 /* Userdata.swift */,
+				04D90EE72DDA2C7D000D8066 /* appleDelegate.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		04D90EEB2DDA35C7000D8066 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				04D90EEC2DDA35D7000D8066 /* Alarm01.wav */,
+				04D90EEE2DDA38F9000D8066 /* Configure.swift */,
+			);
+			name = Alarm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D90EED2DDA35D7000D8066 /* Alarm01.wav in Resources */,
 				047895C02DD29EAA00113504 /* Launch Screen.storyboard in Resources */,
 				042149132DD4478B004F2B12 /* (null) in Resources */,
 				0448DF832DC99B50005EB1AA /* Preview Assets.xcassets in Resources */,
@@ -199,14 +220,17 @@
 			files = (
 				0470B60F2DD86506004F6CE7 /* EmptyJourney.swift in Sources */,
 				0470B6112DD8655E004F6CE7 /* Models.swift in Sources */,
+				04D90EE62DDA2104000D8066 /* SwiftUIView.swift in Sources */,
 				045664152DD966240075AB57 /* Userdata.swift in Sources */,
 				0448DF7E2DC99B4F005EB1AA /* WeightSelected.swift in Sources */,
 				0448DF7C2DC99B4F005EB1AA /* remindmeApp.swift in Sources */,
 				047895BE2DD0CE7D00113504 /* HomeBar.swift in Sources */,
+				04D90EEF2DDA38F9000D8066 /* Configure.swift in Sources */,
 				04CEE4A02DD4F09E0074EE76 /* Journey.swift in Sources */,
 				042149112DD44488004F2B12 /* (null) in Sources */,
 				045D1A5C2DD85A8B001EF919 /* SplashScreen.swift in Sources */,
 				04B967032DD866A80069DE9A /* MainView.swift in Sources */,
+				04D90EE82DDA2C7D000D8066 /* appleDelegate.swift in Sources */,
 				042D51802DD2E17F00215B71 /* (null) in Sources */,
 				045D1A602DD85AE3001EF919 /* IntensifBar.swift in Sources */,
 				042D517E2DD2E12300215B71 /* (null) in Sources */,
@@ -356,8 +380,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,8 +413,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

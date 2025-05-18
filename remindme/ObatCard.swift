@@ -2,11 +2,9 @@ import SwiftUI
 import SwiftData
 
 struct ObatCard: View {
+    @Environment(\.modelContext) private var context
     var disable = false
     var deleteAnim:()->Void = {}
-    
-    @Environment(\.modelContext) private var context
-    
     
     @State private var message:String = "Please take another day"
     @State private var alertDisableShow = false
@@ -120,10 +118,10 @@ struct ObatCard: View {
     }
 }
 
-//#Preview {
-//    ZStack{
-//        Color.backgroundApp.ignoresSafeArea()
-//        ObatCard()
-//    }
-//    
-//}
+#Preview {
+    ZStack{
+        Color.backgroundApp.ignoresSafeArea()
+        ObatCard()
+    }
+
+}
