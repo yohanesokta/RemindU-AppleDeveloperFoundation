@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import UserNotifications
 
 
 struct WeightSelected:View {
@@ -79,6 +80,14 @@ struct WeightSelected:View {
                 }
             }
            
+        }.onAppear{
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                if granted {
+                    print("Izin diberikan")
+                } else if let error = error {
+                    print("Terjadi kesalahan: \(error.localizedDescription)")
+                }
+            }
         }
     }
 }

@@ -52,7 +52,7 @@ struct HomeBar: View {
                             if ( compare == 0 && !thisDayCheck) {
                                 ObatCard(deleteAnim: deleteAnimate)
                                     .offset(x:offsite)
-                                    .animation(.easeInOut(duration: 0.4),value: offsite)
+                                    .animation(.easeInOut(duration: 0.25),value: offsite)
                             } else if (compare == 1) {
                                 ObatCard(disable: true)
                             } else {

@@ -20,7 +20,7 @@ struct Journey: View {
                             endPoint: .bottom
                         )
                     )
-                .frame(height: .infinity).ignoresSafeArea()
+                .frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).ignoresSafeArea()
             VStack {
                 ZStack{
                     ScrollView {

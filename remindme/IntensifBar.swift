@@ -3,7 +3,7 @@ import SwiftData
 
 struct IntensifBar : View {
     
-    @Environment(\.modelContext) private var context 
+    @Environment(\.modelContext) private var context
     @State private var info:Bool = false
     @State private var taken = 0
     @State private var skip = 0
@@ -21,8 +21,9 @@ struct IntensifBar : View {
                 context.delete(item)
         }
 
-            // Simpan perubahan
         try? context.save()
+        
+        saveUserDataToJSON(UserData(startedDay: 0, weight: 0, jenisObat: "", tahapan: 0))
     }
     @State private var progress: Double = 1/60
     @State private var Dayin: Int = 0
