@@ -56,7 +56,3 @@ struct CardJourney: View {
         }
     }
 }
-
-#Preview {
-    CardJourney()
-}

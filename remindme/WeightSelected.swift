@@ -77,12 +77,6 @@ struct WeightSelected:View {
                         }
                     }.padding(.top,130)
                 }
-            }.onAppear{
-                let data = loadUserDataFromJSON()
-                print(data ?? "no data")
-                if data?.weight != 0{
-                    appState.isWeight = true
-                }
             }
            
         }

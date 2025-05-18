@@ -6,6 +6,10 @@ struct ContentView: View {
     var body: some View {
         RootView().onAppear{
             DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                let data = loadUserDataFromJSON()
+                if (data != nil && data?.weight != 0){
+                    appState.isWeight = true
+                }
                 appState.onSplashScreen = false
             }
         }

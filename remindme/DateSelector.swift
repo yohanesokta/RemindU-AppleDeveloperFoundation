@@ -9,7 +9,7 @@ struct DateSelector: View {
     let today = Calendar.current.startOfDay(for: Date())
     
     let dates: [Date]
-    
+    let startDate:Int
     
     init() {
         let range = calendar.range(of: .day, in: .month, for: today)!
@@ -22,6 +22,7 @@ struct DateSelector: View {
             }
         }
         self.dates = tempDates
+        self.startDate = loadUserDataFromJSON()?.startedDay ?? 0
     }
     
     var body: some View {
@@ -55,13 +56,21 @@ struct DateSelector: View {
                                         .foregroundColor(.gray)
                                         .padding(.bottom,10)
                                         .padding(.top,5)
-                                    Text(formattedDate(date, format: "d"))
-                                        .font(.system(size: 14))
-                                        .frame(width: 30,height: 30)
-                                        .background(selectedDate == calendar.startOfDay(for: date) ? Color.bluePrimary : Color.white)
-                                        .cornerRadius(50)
-                                        .foregroundColor(selectedDate == calendar.startOfDay(for: date) ? .white : .black)
+                                    ZStack {
+                                        Text(formattedDate(date, format: "d"))
+                                            .font(.system(size: 14))
+                                            .frame(width: 30,height: 30)
+                                            .background(selectedDate == calendar.startOfDay(for: date) ? Color.bluePrimary : (getTodayAsNumber(date: today) == getTodayAsNumber(date: date)) ? Color.darkGray : Color.white)
+                                            .cornerRadius(50)
+                                            .foregroundColor(selectedDate == calendar.startOfDay(for: date) ? .white : .black)
                                         
+                                            VStack{
+                                                Circle().frame(width: 5,height: 5)
+                                                    .padding(.top,28)
+                                                    .opacity((startDate == getTodayAsNumber(date: date) && selectedDate != calendar.startOfDay(for: date) ? 1.0 : 0))
+                                            }
+                                        
+                                    }
                                 }
                                 .id(date)
                             }
