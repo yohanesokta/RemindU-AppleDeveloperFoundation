@@ -72,7 +72,7 @@ struct SegmenView: View {
                                 Spacer()
                             }
                             
-                            CardJourney()
+                            CardJourney(listing: localdata[index])
                         }.onAppear{
                             jumlahSkip += 1
                         }
@@ -94,7 +94,7 @@ struct SegmenView: View {
                                 Spacer()
                             }
                             
-                            CardJourney()
+                            CardJourney(listing: localdata[index])
                         }.onAppear{
                             jumlahTaken += 1
                         }

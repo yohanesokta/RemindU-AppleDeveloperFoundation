@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CardJourney: View {
+    var listing:LocalData = LocalData(date: 0, obatName: "", taken: false, comment: "")
+    
     var body: some View {
         HStack{
             VStack(alignment:.leading) {
@@ -41,7 +43,7 @@ struct CardJourney: View {
                 VStack(alignment:.leading) {
                     Text("Notes")
                         .foregroundColor(.gray)
-                    Text("Pasien mengalamin muntah")
+                    Text(listing.comments ?? "")
                 }
                 .font(.system(size: 12))
                 .padding(.horizontal, 35)

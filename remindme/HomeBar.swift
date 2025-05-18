@@ -13,7 +13,6 @@ struct HomeBar: View {
     }
     
     @Query var localdata:[LocalData]
-    
     func checkCheked() {
         for data in localdata {
             if ((compareDateNumbers(getTodayAsNumber(), data.date)) == 0) {
@@ -21,6 +20,8 @@ struct HomeBar: View {
             }
         }
     }
+    
+
     
     
     var body: some View {
@@ -93,4 +94,3 @@ struct EmptyObat:View {
 #Preview {
     HomeBar()
 }
-

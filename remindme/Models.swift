@@ -31,21 +31,6 @@ func obatRegimen(weight: Int) -> String {
 }
 
 
-@Model
-
-class userData {
-    var startedDay: Date
-    var weight : Int
-    var jenisObat: String
-    var lastDay:Date
-    init(start:Date,weight:Int,jenisObat:String,lastday:Date) {
-        self.startedDay = start
-        self.weight = weight
-        self.jenisObat = jenisObat
-        self.lastDay = lastday
-    }
-}
-
 
 @Model
 class LocalData:Identifiable {
@@ -106,6 +91,19 @@ func hasPassedDays(startDateNumber: Int, offsetDays: Int) -> Bool {
     return today >= targetDate
 }
 
+
+func daysSince(startDateNumber: Int) -> Int? {
+    guard let startDate = dateFromNumber(startDateNumber) else {
+        return nil
+    }
+
+    let calendar = Calendar.current
+    let today = calendar.startOfDay(for: Date())
+    let start = calendar.startOfDay(for: startDate)
+    
+    let components = calendar.dateComponents([.day], from: start, to: today)
+    return components.day
+}
 
 func compareDateNumbers(_ first: Int, _ second: Int) -> Int {
     guard let date1 = dateFromNumber(first),

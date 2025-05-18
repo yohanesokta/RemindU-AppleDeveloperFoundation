@@ -3,11 +3,14 @@ import SwiftData
 
 
 struct WeightSelected:View {
+    
     @EnvironmentObject var appState:AppState
-        
+    @Environment(\.modelContext) var context
+    @State var selectedBeratBadan : Int = 0
+    
     @State private var selectedSegment = 0
     let segments = ["Children", "Adults"]
-    @Query var users : [userData]
+    
     
     var body: some View {
         NavigationStack{
@@ -75,13 +78,10 @@ struct WeightSelected:View {
                     }.padding(.top,130)
                 }
             }.onAppear{
-                let today:Int = getTodayAsNumber()
-                print(today)
-                print(hasPassedDays(startDateNumber:today, offsetDays:0))
-                if !users.isEmpty {
-                    if (users[0].weight > 0){
-                        appState.isWeight = true
-                    }
+                let data = loadUserDataFromJSON()
+                print(data ?? "no data")
+                if data?.weight != 0{
+                    appState.isWeight = true
                 }
             }
            
@@ -96,9 +96,9 @@ struct WeightSelected:View {
 
 struct BeratBadan: View {
     var appState:AppState
-    @AppStorage("selectedBeratBadan") private var selectedBeratBadan =  0
-    @AppStorage("selectedWeight") private var selectedWeight:String = ""
     
+    @State private var jenisObat:String = ""
+    @AppStorage("selectedBeratBadan") private var selectedBeratBadan = 0
     var rentangBeratBadan: [Int] {
         if appState.ageGroub == "children" {
             return Array(5...50)
@@ -108,6 +108,8 @@ struct BeratBadan: View {
     }
     
     func buttonHandle() {
+        let newUser = UserData(startedDay: getTodayAsNumber(), weight: selectedBeratBadan, jenisObat: obatRegimen(weight: selectedBeratBadan), tahapan: 0)
+        saveUserDataToJSON(newUser)
         appState.isWeight = true
     }
     
@@ -143,7 +145,7 @@ struct BeratBadan: View {
     }
 }
 
-
-#Preview {
-    WeightSelected().environmentObject(AppState())
-}
+//
+//#Preview {
+//    WeightSelected().environmentObject(AppState())
+//}

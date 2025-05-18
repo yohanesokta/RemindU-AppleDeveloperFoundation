@@ -13,6 +13,8 @@ class AppState:ObservableObject {
     @Published var isWeight: Bool = false
     @Published var ageGroub: String = "children"
     @Published var selectedDate:Date = Date()
+    
+    @Published var Weight: Int = 0
 }
 
 @main
