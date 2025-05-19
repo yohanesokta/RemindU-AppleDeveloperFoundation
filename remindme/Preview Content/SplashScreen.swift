@@ -5,13 +5,13 @@ struct ContentView: View {
     
     var body: some View {
         RootView().onAppear{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-                let data = loadUserDataFromJSON()
-                if (data != nil && data?.weight != 0){
-                    appState.isWeight = true
-                }
-                appState.onSplashScreen = false
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+//                let data = loadUserDataFromJSON()
+//                if (data != nil && data?.weight != 0){
+//                    appState.isWeight = true
+//                }
+//                appState.onSplashScreen = false
+//            }
         }
     }
 }
@@ -93,7 +93,7 @@ struct SplashScreen: View {
                         ZStack {
                             Text("RemindU")
                                 .font(.system(size: 34, weight: .bold, design: .rounded))
-                                .foregroundColor(Color(hex: "#FFA500"))
+                                .foregroundColor(Color(hex: "#8DC63F"))
                                 .shadow(color: Color.white.opacity(0.85), radius: 12)
                                 .opacity(textOpacity)
                                 .scaleEffect(textOpacity == 1 ? 1.0 : 0.8)
@@ -105,7 +105,7 @@ struct SplashScreen: View {
 
                         Text("Your smart medication companion")
                             .font(.subheadline)
-                            .foregroundColor(.white.opacity(0.85))
+                            .foregroundColor(.black.opacity(0.8))
                             .opacity(textOpacity)
                     }
                     .padding(.top, 16)

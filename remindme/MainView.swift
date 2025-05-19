@@ -36,7 +36,7 @@ struct mainView: View {
                 }
             }
             
-            SetNotification(hour: 22, minute: 55,message: "Minum Obat Sekarang",title: "Alarm")
+            SetNotification(hour: 10, minute: 51,message: "Minum Obat Sekarang",title: "Alarm")
 
         }
     }

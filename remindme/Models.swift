@@ -122,3 +122,18 @@ func compareDateNumbers(_ first: Int, _ second: Int) -> Int {
         return -1
     }
 }
+
+
+func convertDate(_ input: String) -> String {
+    let inputFormatter = DateFormatter()
+    inputFormatter.dateFormat = "yyyyMMdd"
+    
+    let outputFormatter = DateFormatter()
+    outputFormatter.dateFormat = "MMMM d" // "May 19"
+    
+    if let date = inputFormatter.date(from: input) {
+        return outputFormatter.string(from: date)
+    } else {
+        return "Invalid date"
+    }
+}
