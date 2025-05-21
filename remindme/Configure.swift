@@ -12,7 +12,8 @@ func SetNotification(hour:Int,minute:Int,message:String,title:String){
     let content = UNMutableNotificationContent()
     content.title = title
     content.body = message
-    content.sound = UNNotificationSound(named: UNNotificationSoundName("Alarm01.wav"))
+    content.sound = UNNotificationSound.defaultRingtone
+//    UNNotificationSoundName("Alarm01.wav")
     
     var dateComponents = DateComponents()
     dateComponents.hour = hour

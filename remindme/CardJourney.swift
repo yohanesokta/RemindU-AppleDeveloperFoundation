@@ -13,7 +13,6 @@ struct CardJourney: View {
     var body: some View {
         HStack{
             VStack(alignment:.leading) {
-                
                 HStack(alignment:.top, spacing: 20){
                     Image(systemName: "pills.fill")
                         .resizable()
@@ -34,20 +33,22 @@ struct CardJourney: View {
                             .font(.system(size: 12))
                             .foregroundColor(.bluePrimary)
                     }
-                    
                 }
                 .padding([.top, .trailing],20)
                 .padding(.bottom,10)
                 .padding(.leading,0)
                 
-                VStack(alignment:.leading) {
-                    Text("Notes")
-                        .foregroundColor(.gray)
-                    Text(listing.comments ?? "")
+                if (listing.comments != "") {
+                    HStack {
+                        Text("Notes")
+                            .foregroundColor(.gray)
+                        Text(listing.comments ?? "")
+                    }
+                    .font(.system(size: 12))
+                    .padding(.horizontal, 35)
+                    .padding(.bottom, 10)
                 }
-                .font(.system(size: 12))
-                .padding(.horizontal, 35)
-                .padding(.bottom, 10)
+                
             }
             .frame(maxWidth: .infinity)
             .background(Color.white)
@@ -56,3 +57,4 @@ struct CardJourney: View {
         }
     }
 }
+

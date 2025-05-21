@@ -67,7 +67,7 @@ struct SegmenView: View {
                     if (!localdata[index].taken) {
                         VStack{
                             HStack{
-                                Text("May 14")
+                                Text(convertDate(String(localdata[index].date)))
                                     .font(.system(size: 14, weight: .bold)).padding(.horizontal,25)
                                 Spacer()
                             }
@@ -89,7 +89,7 @@ struct SegmenView: View {
                     if (localdata[index].taken) {
                         VStack{
                             HStack{
-                                Text("May 14")
+                                Text(convertDate(String(localdata[index].date)))
                                     .font(.system(size: 14, weight: .bold)).padding(.horizontal,25)
                                 Spacer()
                             }

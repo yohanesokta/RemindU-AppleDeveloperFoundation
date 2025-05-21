@@ -21,9 +21,6 @@ struct HomeBar: View {
         }
     }
     
-
-    
-    
     var body: some View {
         
         ZStack(alignment:.top){

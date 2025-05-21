@@ -8,6 +8,28 @@ struct IntensifBar : View {
     @State private var taken = 0
     @State private var skip = 0
     
+//    DeveloperMode
+    @State private var timeSet:Date = Date()
+    @State private var devSheet:Bool = false
+    func setNextAlarm(){
+        let now = Date()
+        let calendar = Calendar.current
+        var currentHour = calendar.component(.hour, from: now)
+        var currentMinute = calendar.component(.minute, from: now)
+        SetNotification(hour: currentHour, minute: currentMinute + 1, message: "Ini testing (\(currentHour):\(currentMinute))", title: "Testing")
+    }
+//
+    
+    let dateRange: ClosedRange<Date> = {
+        let calendar = Calendar.current
+        let startComponents = DateComponents(year: 2021, month: 1, day: 1)
+        let endComponents = DateComponents(year: 2021, month: 12, day: 31, hour: 23, minute: 59, second: 59)
+        return calendar.date(from:startComponents)!
+            ...
+            calendar.date(from:endComponents)!
+    }()
+
+    
     let userdata = loadUserDataFromJSON()
     
     let current: Double = 10
@@ -146,16 +168,29 @@ struct IntensifBar : View {
                             }
                     }
                     Spacer()
-                    Menu {
-                        Button("Stop Progresi",action: resetProgres)
-                    } label: {
-                            Image(systemName: "gear.circle.fill")
-                                .resizable()
-                                .foregroundColor(.gray)
-                                .frame(width: 14,height: 14)
-                    }.padding(.all,5)
-                                            .background(Color.backgroundApp)
-                                            .cornerRadius(5)
+                    Button(action: { devSheet = true}, label: {
+                        Image(systemName: "gear.circle.fill")
+                            .resizable()
+                            .foregroundColor(.gray)
+                            .frame(width: 14,height: 14)
+                    }).sheet(isPresented: $devSheet){
+                        VStack(alignment:.leading){
+                            
+                            HStack{
+                                Button("Stop Progresi",action: resetProgres)
+                                    .padding()
+                                    .background(.backgroundApp)
+                                    .cornerRadius(10)
+                                
+                                Button("Set Alarm ( + 1 mnt )",action: setNextAlarm)
+                                    .padding()
+                                    .background(.backgroundApp)
+                                    .cornerRadius(10)
+                            }.padding()
+                            
+                            
+                        }.frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                    }                    
                     
                 }.padding(.horizontal,20)
             Text("Your Summary Today").font(.system(size: 12)).padding(.bottom,15).padding(.horizontal,20)
